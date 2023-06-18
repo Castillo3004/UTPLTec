@@ -3,7 +3,7 @@
 .background{
   display: grid;
   height: 100vh;
-  background: linear-gradient(180deg, rgba(255,255,255,1) 50%, #33265e 50%);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 50%, var(--color-secondary) 50%);
   align-items: center;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
