@@ -6,17 +6,16 @@ import { LoginRegisterComponent } from './layout/login-register/login-register.c
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
-
 @NgModule({
   declarations: [
-  
+
     LoginRegisterComponent,
-       LoginComponent,
-       RegisterComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
   ]
 })
 export class AuthModule { }
