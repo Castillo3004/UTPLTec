@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 90%;
+  margin: 0 auto;
   background: #fff;
   border-radius: 30px;
   box-shadow:
@@ -61,7 +62,6 @@
   justify-content: center;
   margin-right: 1rem;
 }
-
 
 
 .login__ref{
