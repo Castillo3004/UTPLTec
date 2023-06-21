@@ -1,4 +1,17 @@
-# UTPLTEC
+# **UTPLTEC**
 
+### Integrantes
+- Carlos Castillo 
+- Xavier Chávez
+- Jhordan Bustamante
+- Kevin Cabrera
 
-## Se uso Ionic Icons
+#
+
+``` 
+npm i
+```
+
+#
+
+### Se uso Ionic Icons
