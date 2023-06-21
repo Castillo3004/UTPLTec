@@ -1,0 +1,24 @@
+<p>admin-page works!</p>
+
+
+<div>
+
+  <h1>Menu</h1>
+
+  <div *ngFor="let item of menuItems">
+
+    <button routerLink="{{ item.route }}">{{ item.name }}</button>
+
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <div>
+    <a [routerLink] = "['/auth/login']" >Cerrar Sesión</a>
+  </div>
+
+
+</div>
+

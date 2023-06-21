@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginRegisterComponent } from './layout/login-register/login-register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { RegisterComponent } from './pages/register/register.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
+    RouterModule
   ]
 })
 export class AuthModule { }
