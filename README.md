@@ -12,6 +12,13 @@
 npm i
 ```
 
-#
+## RAMA AUTH-FRONTEND 
+### Aqui se hace trabaja como tal en todo lo relacion al login, register, etc
 
-### Se uso Ionic Icons
+#
+``` 
+npm i 
+```
+
+#
+## Se uso Ionic Icons
