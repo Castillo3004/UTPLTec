@@ -1,13 +1,30 @@
-<p>admin-page works!</p>
 
+<div class="admin">
+  <div class="admin__menuBar">
 
-<div>
+    <figure class="admin__menuBar__figure">
+      <img src="../../../../assets/logo.png" alt="ActualizaTec" class="admin__menuBar__figure__img">
+    </figure>
 
-  <h1>Menu</h1>
+    <h3 class="admin__menuBar__title">Menu</h3>
 
-  <div *ngFor="let item of menuItems">
+    <div class="admin__menuBar__buttons">
 
-    <button routerLink="{{ item.route }}">{{ item.name }}</button>
+      <button
+        *ngFor="let item of menuItems"
+        class="admin__menuBar__button"
+        [class.active]="activeRoute === item.route"
+        [routerLink]="item.route"
+        (click)="activeRoute = item.route"
+      >
+        <span class="material-symbols-outlined">{{ item.icon }}</span> {{ item.name }}
+      </button>
+
+    </div>
+
+    <div class="admin__menuBar__div__exit">
+      <a class="admin__menuBar__div__exit__a" [routerLink] = "['/auth/login']"><span class="material-symbols-outlined">logout</span> Cerrar Sesión</a>
+    </div>
 
   </div>
 
@@ -15,10 +32,6 @@
     <router-outlet></router-outlet>
   </div>
 
-  <div>
-    <a [routerLink] = "['/auth/login']" >Cerrar Sesión</a>
-  </div>
-
-
 </div>
+
 

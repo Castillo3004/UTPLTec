@@ -7,6 +7,7 @@ import { CalendarioComponent } from './pages/calendario/calendario.component';
 import { CapacitadoresComponent } from './pages/capacitadores/capacitadores.component';
 import { AdminPageComponent } from './layouts/admin-page/admin-page.component';
 import { RouterModule } from '@angular/router';
+import { NuevoEventoComponent } from './pages/nuevo-evento/nuevo-evento.component';
 
 
 
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     InicioComponent,
     CalendarioComponent,
     CapacitadoresComponent,
+    NuevoEventoComponent,
   ],
   imports: [
     CommonModule,
