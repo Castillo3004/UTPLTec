@@ -103,48 +103,6 @@
 }
 
 
-.login__social{
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  margin: 20px auto;
-}
-
-.login__social__btn{
-  display: inline-flex;
-  width: 35%;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0;
-  border: 1px solid var(--color-primary);
-  border-radius: 5px;
-  background: #fff;
-  color: var(--color-primary);
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 0 var(--color-primary);
-  transition: ease-out 0.4s;
-}
-
-.login__social__btn:hover,
-.login__social__btn:focus{
-  background: var(--color-primary);
-  color: #fff;
-  box-shadow: inset 400px 0 0 0 var(--color-primary);
-}
-
-.login__social__btn .ionicon{
-  fill: var(--color-primary);
-  height: 25px;
-  margin-right: 10px;
-  transition: ease-out 0.4s;
-}
-
-.login__social__btn:hover .ionicon,
-.login__social__btn:focus .ionicon{
-  fill: #fff;
-}
-
 
 .login__register{
   display: flex;
@@ -175,10 +133,6 @@
     font-size: 1rem;
   }
 
-  .login__social__btn{
-    width: 40%;
-  }
-
 }
 
 
@@ -207,23 +161,6 @@
     margin-top: 1rem;
     width: 100%;
     padding: 11px;
-  }
-
-  .login__social{
-    margin: 0 auto;
-    margin-bottom: 0.5rem;
-  }
-
-  .login__social__btn{
-    text-indent: -9999px;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-  }
-
-  .login__social__btn .ionicon{
-    height: 27px;
-    margin-right: 0;
   }
 
   .login__register__a{
