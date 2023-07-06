@@ -5,6 +5,7 @@ import { AdminPageComponent } from './layouts/admin-page/admin-page.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { CalendarioComponent } from './pages/calendario/calendario.component';
 import { CapacitadoresComponent } from './pages/capacitadores/capacitadores.component';
+import { NuevoEventoComponent } from './pages/nuevo-evento/nuevo-evento.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
     children: [
       { path: 'inicio', component: InicioComponent},
       { path: 'calendario', component: CalendarioComponent},
+      { path: 'nuevo-evento', component: NuevoEventoComponent},
       { path: 'capacitadores', component: CapacitadoresComponent},
       { path: '**', redirectTo: 'inicio'},
     ]
