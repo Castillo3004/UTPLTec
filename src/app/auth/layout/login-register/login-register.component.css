@@ -15,3 +15,9 @@
   grid-area: 2 / 3 / 7 / 7;
 
 }
+
+@media (max-width: 820px) {
+  .child{
+    grid-area: 2 / 2 / 8 / 8;
+  }
+}
