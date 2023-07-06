@@ -28,7 +28,7 @@
 }
 
 .login__logo{
-  height: 3.5rem;
+  width: 12rem;
 }
 
 
@@ -168,7 +168,7 @@
 }
 
 
-@media (max-width: 1020px) {
+@media (max-width: 1085px) {
   .login__ref__button{
     width: 50%;
     padding: 10px 0px;
@@ -193,6 +193,10 @@
 
   .login__title{
     font-size: 1.5rem;
+  }
+
+  .login__logo{
+    width: 9rem;
   }
 
   .login__ref{
