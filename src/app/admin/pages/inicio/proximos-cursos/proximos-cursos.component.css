@@ -1,0 +1,79 @@
+
+
+.inicioProfesores{
+  width: 100%;
+  height: 90%;
+  margin: 10px;
+}
+
+.inicioProfesores__title{
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.inicioProfesores__title__figure{
+  display: flex;
+  width: 1.5rem;
+}
+
+.inicioProfesores__title__figure__img{
+  width: 100%;
+}
+
+.inicioProfesores__title__h3{
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.inicioProfesores__container{
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.inicioProfesores__evento{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  border-radius: 20px;
+  background: #efefef;
+  cursor: pointer;
+}
+
+.inicioProfesores__evento:hover{
+  opacity: 0.8;
+}
+
+.inicioProfesores__evento__ol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 10px;
+  background: var(--color-primary);
+}
+
+.inicioProfesores__evento__ol__li{
+  color: #ffff;
+}
+
+
+.inicioProfesores__evento__parrafo{
+  text-align: center;
+  width: 50%;
+  font-size: 0.85rem;
+}
+
+.inicioProfesores__evento__figure{
+  display: flex;
+  width: 9rem;
+}
+
+.inicioProfesores__evento__figure__img{
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}

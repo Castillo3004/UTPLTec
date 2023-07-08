@@ -1,0 +1,76 @@
+
+.inicio__proximosCursos{
+  width: 100%;
+  height: 90%;
+  margin: 10px;
+}
+
+.inicio__proximosCursos__cargar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.inicio__proximosCursos__cargar__title{
+  font-weight: normal;
+}
+
+.inicio__proximosCursos__cargar__button{
+  padding: 15px 70px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--color-secondary);
+  cursor: pointer;
+
+}
+
+.inicio__proximosCursos__cargar__button:hover{
+  opacity: 0.9;
+}
+
+
+
+
+
+.inicio__proximosCursos__profesor{
+  display: flex;
+  margin: 5px 0;
+  padding: 10px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.inicio__proximosCursos__profesor table{
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  width: 100%;
+}
+
+
+.inicio__proximosCursos__profesor th, td{
+  padding: 12px 10px  ;
+  text-align: left;
+}
+
+.inicio__proximosCursos__profesor__tr{
+  background: #eeeeee;
+}
+
+.inicio__proximosCursos__profesor__tr:hover{
+  opacity: 0.8;
+}
+
+
+.inicio__proximosCursos__profesor--background{
+  display: flex;
+  background: var(--color-secondary);
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+}

@@ -1,0 +1,35 @@
+<div class="inicio__proximosCursos">
+
+  <section class="inicio__proximosCursos__cargar">
+    <h3 class="inicio__proximosCursos__cargar__title">Profesores</h3>
+    <button class="inicio__proximosCursos__cargar__button">Subir</button>
+  </section>
+
+
+<section class="inicio__proximosCursos__profesor" >
+  <table>
+    <thead class="inicio__proximosCursos__profesor__thead">
+      <tr class="inicio__proximosCursos__profesor__thead__tr">
+        <th>N°</th>
+        <th>Nombre</th>
+        <th>Celular</th>
+        <th>Fecha</th>
+        <th>Correo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="inicio__proximosCursos__profesor__tr" *ngFor="let profesor of profesores; let i = index">
+        <td class="inicio__proximosCursos__profesor--background">{{ i+1 }}</td>
+        <td>{{ profesor.nombre }}</td>
+        <td>{{ profesor.celular }}</td>
+        <td>{{ profesor.fecha }}</td>
+        <td>{{ profesor.correo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+</div>
+
+

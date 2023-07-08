@@ -8,21 +8,27 @@ import { CapacitadoresComponent } from './pages/capacitadores/capacitadores.comp
 import { AdminPageComponent } from './layouts/admin-page/admin-page.component';
 import { RouterModule } from '@angular/router';
 import { NuevoEventoComponent } from './pages/nuevo-evento/nuevo-evento.component';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
+import { InicioModule } from './pages/inicio/inicio.module';
 
 
 
 @NgModule({
   declarations: [
     AdminPageComponent,
-    InicioComponent,
     CalendarioComponent,
     CapacitadoresComponent,
     NuevoEventoComponent,
+    SideMenuComponent,
+    HeaderAdminComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    RouterModule
+    InicioModule,
+    RouterModule,
+
   ]
 })
 export class AdminModule { }
