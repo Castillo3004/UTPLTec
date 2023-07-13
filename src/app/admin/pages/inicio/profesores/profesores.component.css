@@ -52,6 +52,7 @@
 .inicio__proximosCursos__profesor th, td{
   padding: 12px 10px  ;
   text-align: left;
+  cursor: pointer;
 }
 
 .inicio__proximosCursos__profesor__tr{
