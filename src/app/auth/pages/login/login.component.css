@@ -19,7 +19,8 @@
   color: var(--color-primary);
   margin: 0 auto;
   padding: 10px ;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .login__figure{
@@ -114,6 +115,7 @@
   display: inline-block;
   position: relative;
   margin: 15px auto;
+  margin-bottom: 2rem;
   text-decoration: none;
   color: var(--color-secondary);
   overflow: hidden;

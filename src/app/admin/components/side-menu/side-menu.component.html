@@ -6,22 +6,31 @@
 
   <h3 class="admin__menuBar__title">Menu</h3>
 
-  <div class="admin__menuBar__buttons">
 
-    <button
-      *ngFor="let item of menuItems"
-      class="admin__menuBar__button"
-      [class.active]="activeRoute === item.route"
-      [routerLink]="item.route"
-      (click)="activeRoute = item.route"
-    >
-      <span class="material-symbols-outlined">{{ item.icon }}</span> {{ item.name }}
-    </button>
+  <nav class="navbar navbar-expand-lg">
+    <ul class="navbar-nav flex-column">
+      <li class="nav-item" *ngFor="let menuItem of menuItems">
+        <a class="nav-link admin__menuBar__button" [routerLink]="menuItem.route" [routerLinkActive]="'active'" (click)="redirectToFirstSubitem(menuItem.subitems! )">
+          <i class="material-symbols-outlined">{{ menuItem.icon }}</i>
+          {{ menuItem.name }}
+        </a>
+        <ul class="submenu" *ngIf="menuItem.subitems">
+          <li class="nav-item" *ngFor="let subitem of menuItem.subitems">
+            <a class="nav-link admin__menuBar__button" [routerLink]="subitem.route" [routerLinkActive]="'active'">
+              <i class="material-symbols-outlined">{{ subitem.icon }}</i>
+              {{ subitem.name }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
-  </div>
 
   <div class="admin__menuBar__div__exit">
     <a class="admin__menuBar__div__exit__a" [routerLink] = "['/auth/login']"><span class="material-symbols-outlined">logout</span> Cerrar Sesión</a>
   </div>
 
 </div>
+
+

@@ -15,17 +15,18 @@
   width: 100%;
 }
 
+.navbar{
+  width: 90%;
+  font-size: 1rem;
+}
+
 .admin__menuBar__title{
   margin: 15px 5px;
   width: 90%;
+  margin-top: 2rem;
+  font-size: 1.2rem;
   text-align: left;
   font-weight: 500;
-}
-
-
-
-.admin__menuBar__buttons{
-  width: 90%;
 }
 
 .admin__menuBar__button{
@@ -34,12 +35,12 @@
   padding: 5px 20px;
   width: 100%;
   height: 50px;
-  margin-top: 10px;
+  margin-top: 5px;
   border: none;
   border-radius: 10px;
   color: var(--color-secondary);
   background: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: ease-in 0.4s;
   cursor: pointer;
 }
@@ -47,6 +48,10 @@
 .admin__menuBar__button.active {
   background-color: var(--color-primary);
   color: #fff;
+}
+
+.admin__menuBar .submenu li {
+  list-style-type: none;
 }
 
 .material-symbols-outlined{

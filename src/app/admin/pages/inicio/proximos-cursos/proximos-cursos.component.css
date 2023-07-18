@@ -8,12 +8,11 @@
 
 .inicioProfesores__title{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin: 10px;
 }
 
 .inicioProfesores__title__figure{
-  display: flex;
   width: 1.5rem;
 }
 
@@ -22,8 +21,10 @@
 }
 
 .inicioProfesores__title__h3{
-  font-weight: normal;
+  font-weight: 500;
   margin-left: 10px;
+  font-size: 1rem ;
+  margin-bottom: 0;
 }
 
 .inicioProfesores__container{
@@ -58,6 +59,8 @@
 
 .inicioProfesores__evento__ol__li{
   color: #ffff;
+  font-size: 1rem;
+  margin: 0;
 }
 
 
