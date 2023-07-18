@@ -1,0 +1,17 @@
+
+
+.inicio{
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+
+.inicio__profesores{
+  width: 48%;
+}
+
+.inicio__proximosCursos{
+  width: 48%;
+}
+
+
