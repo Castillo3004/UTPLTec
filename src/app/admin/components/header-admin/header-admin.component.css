@@ -1,0 +1,51 @@
+.header__admin{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  background: var(--color-secondary);
+}
+
+
+
+/* _______________ */
+
+.header__buttons{
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+
+}
+
+
+.material-symbols-outlined{
+  color: #fff;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: ease-out 0.3s;
+}
+
+.material-symbols-outlined:hover{
+  opacity: 0.7  ;
+}
+
+
+.header__buttons__figure{
+  width: 2.7146rem;
+  height: 2.66667rem;
+}
+
+
+.header__buttons__figure__img{
+  height: 100%;
+  border-radius: 0.33333rem;
+  cursor: pointer;
+  transition: ease-out 0.3s;
+}
+
+.header__buttons__figure__img:hover{
+  opacity: 0.7;
+}
+

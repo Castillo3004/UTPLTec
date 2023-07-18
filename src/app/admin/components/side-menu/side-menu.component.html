@@ -1,0 +1,36 @@
+<div class="admin__menuBar">
+
+  <figure class="admin__menuBar__figure">
+    <img src="../../../../assets/logo.png" alt="ActualizaTec" class="admin__menuBar__figure__img">
+  </figure>
+
+  <h3 class="admin__menuBar__title">Menu</h3>
+
+
+  <nav class="navbar navbar-expand-lg">
+    <ul class="navbar-nav flex-column">
+      <li class="nav-item" *ngFor="let menuItem of menuItems">
+        <a class="nav-link admin__menuBar__button" [routerLink]="menuItem.route" [routerLinkActive]="'active'" (click)="redirectToFirstSubitem(menuItem.subitems! )">
+          <i class="material-symbols-outlined">{{ menuItem.icon }}</i>
+          {{ menuItem.name }}
+        </a>
+        <ul class="submenu" *ngIf="menuItem.subitems">
+          <li class="nav-item" *ngFor="let subitem of menuItem.subitems">
+            <a class="nav-link admin__menuBar__button" [routerLink]="subitem.route" [routerLinkActive]="'active'">
+              <i class="material-symbols-outlined">{{ subitem.icon }}</i>
+              {{ subitem.name }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+
+  <div class="admin__menuBar__div__exit">
+    <a class="admin__menuBar__div__exit__a" [routerLink] = "['/auth/login']"><span class="material-symbols-outlined">logout</span> Cerrar Sesión</a>
+  </div>
+
+</div>
+
+

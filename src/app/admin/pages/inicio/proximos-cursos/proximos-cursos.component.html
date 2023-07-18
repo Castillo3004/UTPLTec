@@ -1,0 +1,29 @@
+
+<div class="inicioProfesores">
+
+  <div class="inicioProfesores__title">
+    <figure class="inicioProfesores__title__figure">
+      <img src="../.././../../../assets/icons/icono_ray.png" class="inicioProfesores__title__figure__img">
+    </figure>
+    <h3 class="inicioProfesores__title__h3">Proximos Cursos</h3>
+  </div>
+
+
+
+    <div class="inicioProfesores__evento" *ngFor="let evento of eventosProximos; let i = index">
+
+      <div class="inicioProfesores__evento__ol">
+        <h4 class="inicioProfesores__evento__ol__li">{{ i+1 }}</h4>
+      </div>
+
+      <p class="inicioProfesores__evento__parrafo">
+        {{ evento.descripcion }}
+      </p>
+
+      <figure class="inicioProfesores__evento__figure">
+        <img [src]="evento.imagen" alt="" class="inicioProfesores__evento__figure__img">
+      </figure>
+    </div>
+
+
+</div>
