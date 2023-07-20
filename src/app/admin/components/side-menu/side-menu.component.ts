@@ -30,8 +30,8 @@ export class SideMenuComponent {
       name: 'Eventos',
       icon: 'event',
       subitems: [
-        { route: '/admin/eventos/agregar', name: 'Agregar Evento', icon: 'add_box' },
         { route: '/admin/eventos/lista', name: 'Lista Eventos', icon: 'event_list' },
+        { route: '/admin/eventos/agregar', name: 'Agregar Evento', icon: 'add_box' },
       ]
     },
     {
@@ -39,8 +39,8 @@ export class SideMenuComponent {
       name: 'Capacitadores',
       icon: 'school',
       subitems: [
-        { route: '/admin/capacitadores/agregar', name: 'Agregar Capacitador', icon: 'person_add' },
         { route: '/admin/capacitadores/lista', name: 'Lista Capacitadores', icon: 'group' },
+        { route: '/admin/capacitadores/agregar', name: 'Agregar Capacitador', icon: 'person_add' },
       ]
     },
   ];

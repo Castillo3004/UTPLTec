@@ -1,93 +1,87 @@
 
-
-.capacitadores{
-  width: 100%;
-  height: 90%;
-  padding: 20px 40px;
-}
-
-.capacitadores__title{
+.title__containter{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.capacitadores__title__h2{
+.title__containter__h3{
   color: var(--color-primary);
+  font-weight: 500;
 }
 
-.capacitadores__title__figure{
+.title__containter__figure{
   width: 10rem;
 }
 
-.capacitadores__title__figure__img{
+.title__containter__figure__img{
   width: 100%;
 }
 
 
-.capacitadores__form{
+.form__capacit{
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 20px;
-}
-
-
-.capacitadores__form__container{
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 3rem;
-}
-
-
-.capacitadores__form__container__group{
-  display: flex;
-  flex-direction: column;
-  width: 18%;
+  width: 90%;
+  margin: 0 auto;
   justify-content: center;
 }
 
 
-.capacitadores__form__container:nth-child(1){
-  margin-top: 0;
-}
 
-.capacitadores__form__container__group label{
-  color: var(--color-primary);
-  font-weight: 500;
-  text-align: left;
-  font-size: 0.9rem;
+.form__capacit__inputs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 
 
-.capacitadores__form__container__group input{
+.form__capacit__inputs__input{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 20px 40px;
+}
+
+.form__capacit__inputs__input>input{
   display: block;
   width: 100%;
   height: 2rem;
   margin: 0 auto;
   border: none;
-  border-bottom: 2px solid #757575;
+  border-bottom: 2px solid #b6b6b6;
+  transition: ease-in-out 0.4s;
   outline: none;
-  transition: ease 0.4s;
 }
 
-.capacitadores__form__container__group input:focus{
-
-  border-bottom: 2px solid var(--color-primary);
+.form__capacit__inputs__input>input:focus{
+  border-bottom-color: var(--color-primary);
 }
 
-.capacitadores__form__container__group__button{
-  background-color: var(--color-secondary);
-  height: 100%;
+
+.form__capacit__inputs__input>label{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  color: var(--color-secondary);
+}
+
+
+.form__capacit__button{
+  align-self: flex-end;
+}
+
+.form__capacit__button button{
+  padding: 13px 40px;
+  border: none;
+  border-radius: 5px;
   color: #fff;
-  border-radius: 0.46667rem;
+  background: var(--color-secondary);
   font-size: 1rem;
+  transition: ease-in 0.4s;
   cursor: pointer;
-  transition: ease 0.4s;
 }
 
-.capacitadores__form__container__group__button:hover{
+.form__capacit__button button:hover{
   opacity: 0.9;
 }
-
-

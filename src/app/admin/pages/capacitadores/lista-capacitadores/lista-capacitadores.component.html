@@ -1,1 +1,38 @@
-<p>lista-capacitadores works!</p>
+<div class="container p-3">
+
+  <div class="capacitadores__title">
+    <h3 class="capacitadores__title__h3">Lista de Capacitadores</h3>
+  </div>
+
+  <section class="table-responsive pt-3">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Area de Conocimiento</th>
+          <th>Correo Electronico</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let capacitador of capacitadores">
+          <td>{{ capacitador.id }}</td>
+          <td>{{ capacitador.nombre }}</td>
+          <td>{{ capacitador.area_conocimiento }}</td>
+          <td>{{ capacitador.correo }}</td>
+          <td> <h6 class="capacitadores__table__estado">{{ capacitador.estado }}</h6></td>
+          <td>
+            <div class="capacitadores__table__actions__buttons">
+              <button class="capacitadores__table__edit__button"><i class="material-symbols-outlined">edit</i></button>
+              <button class="capacitadores__table__delete__button"><i class="material-symbols-outlined">delete</i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+

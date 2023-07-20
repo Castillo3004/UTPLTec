@@ -1,1 +1,37 @@
-<p>lista-eventos works!</p>
+<div class="container p-3">
+
+  <div class="eventos__title">
+    <h3 class="eventos__title__h3">Lista de Eventos</h3>
+  </div>
+
+  <section class="table-responsive pt-3">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Ver</th>
+          <th>Id</th>
+          <th>Evento</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Estado</th>
+          <th>Asignar</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let evento of eventos">
+          <td>
+            <button class="eventos__table__ver__button"><i class="material-symbols-outlined">visibility</i></button>
+          </td>
+          <td>{{ evento.id }}</td>
+          <td>{{ evento.evento }}</td>
+          <td>{{ evento.fecha }}</td>
+          <td>{{ evento.hora }}</td>
+          <td> <h6 class="eventos__table__estado">{{ evento.estado }}</h6></td>
+          <td><button class="eventos__table__asignar__button">Asignar Profesor</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+

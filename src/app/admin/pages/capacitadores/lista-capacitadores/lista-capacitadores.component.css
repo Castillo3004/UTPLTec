@@ -1,0 +1,61 @@
+.table{
+  vertical-align: middle;
+}
+
+.capacitadores__title__h3{
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+
+.capacitadores__table__actions__buttons{
+  display: flex;
+  gap: 0.4rem;
+}
+
+
+.capacitadores__table__edit__button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 5px;
+  border-radius: 0.5rem;
+  transition: ease-in-out 0.3s;
+}
+
+.capacitadores__table__edit__button:hover{
+  opacity: 0.8;
+}
+
+
+.capacitadores__table__delete__button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 5px;
+  border-radius: 0.5rem;
+  transition: ease-in-out 0.3s;
+}
+
+.capacitadores__table__delete__button:hover{
+  opacity: 0.8;
+}
+
+
+.capacitadores__table__estado{
+  display: flex;
+  justify-content: center;
+  background-color: #32f16e;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 1rem;
+  padding: 0.45rem 0;
+}

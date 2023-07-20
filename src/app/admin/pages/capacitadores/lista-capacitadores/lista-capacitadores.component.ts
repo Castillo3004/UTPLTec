@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ListaCapacitadoresComponent {
 
+  capacitadores = [
+    { id: 1, nombre: 'José Ramos', area_conocimiento: 'Marketing', correo: 'joseramos@utpl.edu.ec', estado: 'Activo' },
+    { id: 2, nombre: 'Maria Bustamante', area_conocimiento: 'Artes', correo: 'mbustamante3@utpl.edu.ec', estado: 'Ocupado' },
+  ];
+
 }
