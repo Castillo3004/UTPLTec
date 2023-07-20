@@ -24,10 +24,11 @@
             <button class="eventos__table__ver__button"><i class="material-symbols-outlined">visibility</i></button>
           </td>
           <td>{{ evento.id }}</td>
-          <td>{{ evento.evento }}</td>
+          <td>{{ evento.titulo }}</td>
           <td>{{ evento.fecha }}</td>
-          <td>{{ evento.hora }}</td>
-          <td> <h6 class="eventos__table__estado">{{ evento.estado }}</h6></td>
+          <!-- TODO: remplazar duracion -->
+          <td>{{ evento.duracion }}</td>
+          <!-- <td> <h6 class="eventos__table__estado">{{ evento.estado }}</h6></td> -->
           <td><button class="eventos__table__asignar__button">Asignar Profesor</button></td>
         </tr>
       </tbody>

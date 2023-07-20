@@ -1,15 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Capacitadores } from 'src/app/admin/interfaces/capacitadores.interface';
+import { CapacitadoresService } from 'src/app/admin/services/capacitadores.service';
 
 @Component({
   selector: 'admin-lista-capacitadores',
   templateUrl: './lista-capacitadores.component.html',
   styleUrls: ['./lista-capacitadores.component.css']
 })
-export class ListaCapacitadoresComponent {
+export class ListaCapacitadoresComponent implements OnInit{
 
-  capacitadores = [
-    { id: 1, nombre: 'José Ramos', area_conocimiento: 'Marketing', correo: 'joseramos@utpl.edu.ec', estado: 'Activo' },
-    { id: 2, nombre: 'Maria Bustamante', area_conocimiento: 'Artes', correo: 'mbustamante3@utpl.edu.ec', estado: 'Ocupado' },
-  ];
+  public capacitadores: Capacitadores[] = [];
+
+  private capacitadoresService = inject(CapacitadoresService)
+
+
+  ngOnInit(): void {
+    this.capacitadoresService.getCapacitadores()
+      .subscribe( capacitadores => this.capacitadores = capacitadores );
+
+  }
+
 
 }

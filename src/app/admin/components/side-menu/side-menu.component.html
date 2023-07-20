@@ -10,7 +10,7 @@
   <nav class="navbar navbar-expand-lg">
     <ul class="navbar-nav flex-column">
       <li class="nav-item" *ngFor="let menuItem of menuItems">
-        <a class="nav-link admin__menuBar__button" [routerLink]="menuItem.route" [routerLinkActive]="'active'" (click)="redirectToFirstSubitem(menuItem.subitems! )">
+        <a class="nav-link admin__menuBar__button" [routerLink]="menuItem.route" [routerLinkActive]="'active'" (click)="redirectToFirstSubitem( menuItem.subitems! )">
           <i class="material-symbols-outlined">{{ menuItem.icon }}</i>
           {{ menuItem.name }}
         </a>
