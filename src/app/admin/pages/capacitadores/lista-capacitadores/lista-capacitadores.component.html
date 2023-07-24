@@ -8,8 +8,10 @@
     <table class="table table-striped table-hover">
       <thead>
         <tr>
+          <th>Ver</th>
           <th>Id</th>
           <th>Nombre</th>
+          <th>Apellido</th>
           <th>Area de Conocimiento</th>
           <th>Correo Electronico</th>
           <th>Estado</th>
@@ -19,15 +21,19 @@
       <tbody>
 
         <tr *ngFor="let capacitador of capacitadores">
+          <td>
+            <button class="eventos__table__ver__button"><i class="material-symbols-outlined">visibility</i></button>
+          </td>
           <td>{{ capacitador.id }}</td>
-          <td>{{ capacitador.nombre }}</td>
-          <td>{{ capacitador.carrera }}</td>
-          <!-- <td>{{ capacitador. }}</td>
-          <td> <h6 class="capacitadores__table__estado">{{ capacitador.estado }}</h6></td> -->
+          <td>{{ capacitador.nombreDocente }}</td>
+          <td>{{ capacitador.apellidoDocente }}</td>
+          <td>{{ capacitador.areas[0].nombreArea }}</td>
+          <td>{{ capacitador.correo }}</td>
+          <td> <h6 class="capacitadores__table__estado">{{ capacitador.estado }}</h6></td>
           <td>
             <div class="capacitadores__table__actions__buttons">
-              <button class="capacitadores__table__edit__button"><i class="material-symbols-outlined">edit</i></button>
-              <button class="capacitadores__table__delete__button"><i class="material-symbols-outlined">delete</i></button>
+              <button class="capacitadores__table__edit__button" [routerLink]="['/admin/capacitadores/editar', capacitador.id]"><i class="material-symbols-outlined">edit</i></button>
+              <button class="capacitadores__table__delete__button" (click)="onDeleteCapacitador( capacitador.id)"><i class="material-symbols-outlined">delete</i></button>
             </div>
           </td>
         </tr>

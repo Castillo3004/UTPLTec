@@ -13,10 +13,26 @@ export class ListaEventosComponent implements OnInit{
 
   private eventosService = inject( EventosService );
 
-  ngOnInit(): void {
-      this.eventosService.getEventos()
+
+  private getAllEventos(){
+    this.eventosService.getEventos()
         .subscribe( eventos => this.eventos = eventos);
   }
+
+  ngOnInit(): void {
+      this.getAllEventos();
+  }
+
+
+  onDeleteEvento( id: number ){
+    if( !id ) throw Error('Capacitador id is required');
+
+    this.eventosService.deleteEventoById( id ).subscribe( () =>{
+      this.getAllEventos()
+    })
+  }
+
+
 
 
 

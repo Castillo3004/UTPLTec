@@ -1,0 +1,97 @@
+
+.title__containter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title__containter__h3{
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.title__containter__figure{
+  width: 10rem;
+}
+
+.title__containter__figure__img{
+  width: 100%;
+}
+
+
+.form__capacit{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+
+
+.form__capacit__inputs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+
+.form__capacit__inputs__input{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 20px 40px;
+}
+
+.form__capacit__inputs__input>input, select{
+  display: block;
+  width: 100%;
+  height: 2rem;
+  margin: 0 auto;
+  border: none;
+  margin-top: 10px;
+  border-bottom: 2px solid #b6b6b6;
+  transition: ease-in-out 0.4s;
+  outline: none;
+}
+
+.form__capacit__inputs__input>input:focus{
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.form__capacit__inputs__input select {
+  cursor: pointer;
+}
+
+
+
+.form__capacit__inputs__input>label{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  color: var(--color-secondary);
+}
+
+select#area_conocimiento option {
+  font-size: 1rem;
+}
+
+
+.form__capacit__button{
+  align-self: flex-end;
+}
+
+.form__capacit__button button{
+  padding: 13px 40px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background: var(--color-secondary);
+  font-size: 1rem;
+  transition: ease-in 0.4s;
+  cursor: pointer;
+}
+
+.form__capacit__button button:hover{
+  opacity: 0.9;
+}

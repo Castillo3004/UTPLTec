@@ -43,20 +43,26 @@
   margin: 20px 40px;
 }
 
-.form__capacit__inputs__input>input{
+.form__capacit__inputs__input>input, select{
   display: block;
   width: 100%;
   height: 2rem;
   margin: 0 auto;
   border: none;
+  margin-top: 10px;
   border-bottom: 2px solid #b6b6b6;
   transition: ease-in-out 0.4s;
   outline: none;
 }
 
 .form__capacit__inputs__input>input:focus{
-  border-bottom-color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
 }
+
+.form__capacit__inputs__input select {
+  cursor: pointer;
+}
+
 
 
 .form__capacit__inputs__input>label{
@@ -64,6 +70,10 @@
   margin-top: 20px;
   align-items: center;
   color: var(--color-secondary);
+}
+
+select#area_conocimiento option {
+  font-size: 1rem;
 }
 
 

@@ -1,15 +1,16 @@
-
-
 <div class="container mod">
 
   <div class="title__containter">
-    <h3 class="title__containter__h3">Agregar Capacitador: </h3>
+    <h3 class="title__containter__h3">
+      {{ currentCapacitador ? 'Editar Capcitador': 'Agregar Capacitador'}}
+      <small *ngIf="currentCapacitador.id">{{ currentCapacitador.nombreDocente}}</small>
+    </h3>
     <figure class="title__containter__figure">
       <img class="title__containter__figure__img" src="../../../../../assets/logo.png" alt="Logo ActualizaTEC">
     </figure>
   </div>
 
-  <form class="form__capacit">
+  <form class="form__capacit" [formGroup]="capacitadorForm" (ngSubmit)="onSubmit()">
 
     <div class="form__capacit__loadImage">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png"
@@ -20,47 +21,92 @@
 
       <div class="form__capacit__inputs__input">
         <label for="nombre">Nombre</label>
-        <input id="nombre" type="text">
+        <input
+          id="nombre"
+          type="text"
+          required
+          formControlName="nombreDocente"
+        >
       </div>
 
       <div class="form__capacit__inputs__input">
         <label for="apellido">Apellido</label>
-        <input id="apellido" type="text">
+        <input
+          id="apellido"
+          type="text"
+          required
+          formControlName="apellidoDocente"
+        >
       </div>
 
       <div class="form__capacit__inputs__input">
         <label for="correo">Correo</label>
-        <input id="correo" type="text">
+        <input
+          id="correo"
+          type="text"
+          required
+          formControlName="correo"
+        >
       </div>
 
       <div class="form__capacit__inputs__input">
         <label for="identificacion">Identificación</label>
-        <input id="identificacion" type="text">
+        <input
+          id="identificacion"
+          type="text"
+          required
+          formControlName="identificacion"
+        >
       </div>
 
       <div class="form__capacit__inputs__input">
         <label for="carrera">Carrera</label>
-        <input id="carrera" type="text">
+        <input
+          id="carrera"
+          type="text"
+          required
+          formControlName="carrera"
+        >
       </div>
 
       <div class="form__capacit__inputs__input">
         <label for="telefono">Teléfono</label>
-        <input id="telefono" type="text">
+        <input
+          id="telefono"
+          type="text"
+          required
+          formControlName="telefono"
+        >
       </div>
 
       <div class="form__capacit__inputs__input">
         <label for="area_conocimiento">Area de Conocimiento</label>
-        <input id="area_conocimiento" type="text">
+        <select
+          id="area_conocimiento"
+          required
+          formControlName="areaConocimiento"
+        >
+          <option disabled selected>Seleccione Area</option>
+          <option
+            *ngFor="let area of areas"
+            [value]="area.id"
+          >{{ area.nombreArea }}</option>
+        </select>
       </div>
 
       <div class="form__capacit__inputs__input">
         <label for="descripcion">Descripción</label>
-        <input id="descripcion" type="text">
+        <input
+          id="descripcion"
+          type="text"
+          required
+          formControlName="descripcion"
+        >
       </div>
     </div>
 
     <div class="form__capacit__button">
-      <button>Confirmar</button>
+      <button type="submit" >Confirmar</button>
     </div>
 
 

@@ -14,10 +14,24 @@ export class ListaCapacitadoresComponent implements OnInit{
   private capacitadoresService = inject(CapacitadoresService)
 
 
-  ngOnInit(): void {
+  private getAllCapacitadores() {
     this.capacitadoresService.getCapacitadores()
       .subscribe( capacitadores => this.capacitadores = capacitadores );
+  }
 
+
+  ngOnInit(): void {
+    this.getAllCapacitadores();
+  }
+
+
+
+  onDeleteCapacitador( id: number){
+    if( !id ) throw Error('Capacitador id is required');
+
+    this.capacitadoresService.deleteCapacitadorById( id ).subscribe( () =>{
+      this.getAllCapacitadores()
+    })
   }
 
 

@@ -22,6 +22,7 @@ const routes: Routes = [
       { path: 'capacitadores', children: [
           { path: 'lista', component: ListaCapacitadoresComponent},
           { path: 'agregar', component: AgregarCapacitadoresComponent},
+          { path: 'editar/:id', component: AgregarCapacitadoresComponent},
         ]
       },
       { path: '**', redirectTo: 'inicio'},

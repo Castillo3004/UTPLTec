@@ -15,6 +15,7 @@
           <th>Hora</th>
           <th>Estado</th>
           <th>Asignar</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -26,10 +27,15 @@
           <td>{{ evento.id }}</td>
           <td>{{ evento.titulo }}</td>
           <td>{{ evento.fecha }}</td>
-          <!-- TODO: remplazar duracion -->
           <td>{{ evento.duracion }}</td>
-          <!-- <td> <h6 class="eventos__table__estado">{{ evento.estado }}</h6></td> -->
+          <td> <h6 class="eventos__table__estado">{{ evento.estado }}</h6></td>
           <td><button class="eventos__table__asignar__button">Asignar Profesor</button></td>
+          <td>
+            <div class="capacitadores__table__actions__buttons">
+              <button class="capacitadores__table__edit__button"><i class="material-symbols-outlined">edit</i></button>
+              <button class="capacitadores__table__delete__button" (click)="onDeleteEvento( evento.id )"><i class="material-symbols-outlined">delete</i></button>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

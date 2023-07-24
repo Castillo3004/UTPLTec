@@ -1,1 +1,97 @@
-<p>nuevo-evento works!</p>
+<div class="container mod">
+
+  <div class="title__containter">
+    <h3 class="title__containter__h3">
+      Agregar Evento
+    </h3>
+    <figure class="title__containter__figure">
+      <img class="title__containter__figure__img" src="../../../../../assets/logo.png" alt="Logo ActualizaTEC">
+    </figure>
+  </div>
+
+  <form class="form__capacit" [formGroup]="eventoForm" (ngSubmit)="onSubmit()">
+
+    <div class="form__capacit__loadImage">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png"
+        alt="example placeholder" style="width: 200px" />
+    </div>
+
+    <div class="form__capacit__inputs">
+
+      <div class="form__capacit__inputs__input">
+        <label for="titulo">Titulo</label>
+        <input
+          id="titulo"
+          type="text"
+          required
+          formControlName="titulo"
+        >
+      </div>
+
+      <div class="form__capacit__inputs__input">
+        <label for="descripcion">Descripción</label>
+        <input
+          id="descripcion"
+          type="text"
+          required
+          formControlName="descripcion"
+        >
+      </div>
+
+      <div class="form__capacit__inputs__input">
+        <label for="duracion">Duración</label>
+        <input
+          id="duracion"
+          type="text"
+          required
+          formControlName="duracion"
+        >
+      </div>
+
+      <div class="form__capacit__inputs__input">
+        <label for="fecha">Fecha</label>
+        <input
+          id="fecha"
+          type="date"
+          required
+          formControlName="fecha"
+        >
+      </div>
+
+      <div class="form__capacit__inputs__input">
+        <label for="inicioHora">Inicio Hora</label>
+        <input
+          id="inicioHora"
+          type="text"
+          required
+          formControlName="inicioHora"
+        >
+      </div>
+
+
+      <div class="form__capacit__inputs__input">
+        <label for="area_conocimiento">Area de Conocimiento</label>
+        <select
+          id="area_conocimiento"
+          required
+          formControlName="areaConocimiento"
+        >
+          <option disabled selected>Seleccione Area</option>
+          <option
+            *ngFor="let area of areas"
+            [value]="area.id"
+          >{{ area.nombreArea }}</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="form__capacit__button">
+      <button type="submit" >Confirmar</button>
+    </div>
+
+
+  </form>
+
+
+</div>

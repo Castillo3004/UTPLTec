@@ -8,6 +8,24 @@
 }
 
 
+.eventos__table__ver__button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 5px;
+  border-radius: 0.5rem;
+  transition: ease-in-out 0.3s;
+}
+
+.eventos__table__ver__button:hover{
+  background: var(--color-primary);
+}
+
+
 .capacitadores__table__actions__buttons{
   display: flex;
   gap: 0.4rem;
