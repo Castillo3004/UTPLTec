@@ -13,6 +13,7 @@ import { HeaderAdminComponent } from './components/header-admin/header-admin.com
 import { ListaCapacitadoresComponent } from './pages/capacitadores/lista-capacitadores/lista-capacitadores.component';
 import { AgregarEventoComponent } from './pages/eventos/agregar-evento/nuevo-evento.component';
 import { ListaEventosComponent } from './pages/eventos/lista-eventos/lista-eventos.component';
+import { VerEventoComponent } from './pages/eventos/ver-evento/ver-evento.component';
 
 
 
@@ -26,7 +27,8 @@ import { ListaEventosComponent } from './pages/eventos/lista-eventos/lista-event
     AgregarCapacitadoresComponent,
     ListaCapacitadoresComponent,
     AgregarEventoComponent,
-    ListaEventosComponent
+    ListaEventosComponent,
+    VerEventoComponent
   ],
   imports: [
     CommonModule,

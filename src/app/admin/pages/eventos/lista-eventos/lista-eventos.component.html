@@ -22,7 +22,7 @@
 
         <tr *ngFor="let evento of eventos">
           <td>
-            <button class="eventos__table__ver__button"><i class="material-symbols-outlined">visibility</i></button>
+            <button class="eventos__table__ver__button" [routerLink]="['/admin/eventos/evento', evento.id]"><i class="material-symbols-outlined">visibility</i></button>
           </td>
           <td>{{ evento.id }}</td>
           <td>{{ evento.titulo }}</td>

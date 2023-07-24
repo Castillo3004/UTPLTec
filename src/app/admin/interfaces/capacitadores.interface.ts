@@ -11,6 +11,6 @@ export interface Capacitadores {
   carrera:         string;
   telefono:        string;
   descripcion:     string;
-  estado:          'Activo' | 'Ocupado';
+  estado:          'Libre' | 'Ocupado';
   areas:           AreasConocimiento[];
 }

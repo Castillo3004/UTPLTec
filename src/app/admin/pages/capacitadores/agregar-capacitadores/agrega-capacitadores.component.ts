@@ -49,7 +49,7 @@ export class AgregarCapacitadoresComponent  implements OnInit{
     const selectedAreaId = this.capacitadorForm.value.areaConocimiento;
     const capacitador: Capacitadores = {
       ...this.capacitadorForm.value,
-      estado: 'Activo',
+      estado: 'Libre',
       areas: [{ id: selectedAreaId }],
     };
     return capacitador;

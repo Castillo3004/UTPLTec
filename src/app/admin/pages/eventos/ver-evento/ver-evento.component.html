@@ -1,0 +1,70 @@
+<div class="container">
+
+  <section>
+
+    <h2>{{ evento?.titulo}}</h2>
+
+    <div>
+      <h3>Descripción</h3>
+      <p>{{ evento?.descripcion }}</p>
+    </div>
+
+    <div>
+      <div>
+        <h4>Modalidad</h4>
+        <p>Presencial</p>
+      </div>
+      <div>
+        <h4>Fecha</h4>
+        <p>{{ evento?.fecha }}</p>
+      </div>
+    </div>
+
+    <div>
+      <h4>Area de conocimiento</h4>
+      <p>{{ evento!.areas[0].nombreArea }}</p>
+
+      <figure>
+        <img src="" alt="">
+      </figure>
+    </div>
+
+  </section>
+
+  <section>
+
+    <h4>Profesores Disponibles</h4>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Ver</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Area de Conocimiento</th>
+          <th>Correo Electronico</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let capacitador of capacitadoresByArea">
+          <td>
+            <button class="eventos__table__ver__button"><i class="material-symbols-outlined">visibility</i></button>
+          </td>
+          <td>{{ capacitador.nombreDocente }}</td>
+          <td>{{ capacitador.apellidoDocente }}</td>
+          <td>{{ capacitador.areas[0].nombreArea }}</td>
+          <td>{{ capacitador.correo }}</td>
+          <td>
+            <div class="capacitadores__table__actions__buttons">
+              <button class="capacitadores__table__edit__button" [routerLink]="['/admin/capacitadores/editar', capacitador.id]"><i class="material-symbols-outlined">email</i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </section>
+</div>
