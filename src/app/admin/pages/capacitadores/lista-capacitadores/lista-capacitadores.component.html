@@ -22,7 +22,7 @@
 
         <tr *ngFor="let capacitador of capacitadores">
           <td>
-            <button class="eventos__table__ver__button"><i class="material-symbols-outlined">visibility</i></button>
+            <button class="eventos__table__ver__button" [routerLink]="['/admin/capacitadores/capacitador', capacitador.id]"><i class="material-symbols-outlined">visibility</i></button>
           </td>
           <td>{{ capacitador.id }}</td>
           <td>{{ capacitador.nombreDocente }}</td>

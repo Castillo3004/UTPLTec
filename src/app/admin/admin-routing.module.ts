@@ -8,6 +8,7 @@ import { AgregarCapacitadoresComponent } from './pages/capacitadores/agregar-cap
 import { AgregarEventoComponent } from './pages/eventos/agregar-evento/nuevo-evento.component';
 import { ListaEventosComponent } from './pages/eventos/lista-eventos/lista-eventos.component';
 import { VerEventoComponent } from './pages/eventos/ver-evento/ver-evento.component';
+import { VerCapacitadorComponent } from './pages/capacitadores/ver-capacitador/ver-capacitador.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
         ]
       },
       { path: 'capacitadores', children: [
+          { path: 'capacitador/:id', component: VerCapacitadorComponent },
           { path: 'lista', component: ListaCapacitadoresComponent},
           { path: 'agregar', component: AgregarCapacitadoresComponent},
           { path: 'editar/:id', component: AgregarCapacitadoresComponent},

@@ -29,7 +29,6 @@ export class VerEventoComponent implements OnInit{
   private getAllCapacitadoresByArea( areaId: number ){
     this.capacitadoresService.getCapacitadores()
       .subscribe( capacitadores => {
-
         this.capacitadoresByArea = capacitadores.filter(capacitador => capacitador.areas.some( area => area.id === areaId ));
       })
   }
@@ -47,6 +46,7 @@ export class VerEventoComponent implements OnInit{
       return;
     })
 
+    console.log(this.capacitadoresByArea);
   }
 
 }

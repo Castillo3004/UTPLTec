@@ -1,0 +1,74 @@
+
+<section class="container">
+
+  <div class="title__containter">
+    <h2 class="title__containter__h2">
+      {{ capacitador?.nombreDocente }} {{ capacitador?.apellidoDocente }}
+    </h2>
+    <figure class="title__containter__figure">
+      <img class="title__containter__figure__img" src="../../../../../assets/logo.png" alt="Logo ActualizaTEC">
+    </figure>
+  </div>
+
+  <div class="info__capacitador">
+    <figure class="info__capacitador__figure">
+      <img class="info__capacitador__figure__img" src="https://marketplace.canva.com/EAFmXbWjG3g/1/0/1600w/canva-avatar-foto-de-perfil-hombre-dibujo-ilustrado-moderno-morado-YQVjZm4iPII.jpg" [alt]="capacitador?.nombreDocente">
+    </figure>
+
+    <section class="info__capacitador__section">
+
+      <div class="info__capacitador__section__container">
+        <div class="info__capacitador__section__container__data">
+          <h4>Correo</h4>
+          <p>{{ capacitador?.correo}}</p>
+        </div>
+        <div class="info__capacitador__section__container__data">
+          <h4>Identificación</h4>
+          <p>{{ capacitador?.identificacion}}</p>
+        </div>
+      </div>
+
+      <div class="info__capacitador__section__container">
+        <div class="info__capacitador__section__container__data">
+          <h4>Teléfono</h4>
+          <p>{{ capacitador?.telefono}}</p>
+        </div>
+        <div class="info__capacitador__section__container__data">
+          <h4>Estado</h4>
+          <p>{{ capacitador?.estado}}</p>
+        </div>
+      </div>
+
+      <div class="info__capacitador__section__container">
+        <div class="info__capacitador__section__container__data">
+          <h4>Carrera</h4>
+          <p>{{ capacitador?.carrera}}</p>
+        </div>
+        <div class="info__capacitador__section__container__data">
+          <h4>Área Conocimiento</h4>
+          <p>{{ capacitador!.areas[0].nombreArea }}</p>
+        </div>
+      </div>
+
+      <div class="info__capacitador__section__container">
+        <div class="info__capacitador__section__container__data">
+          <h4>Descripción</h4>
+          <p>{{ capacitador?.descripcion}}</p>
+        </div>
+      </div>
+
+      <div class="info__capacitador__section__buttons">
+        <button class="info__capacitador__section__buttons__button" [routerLink]="['/admin/capacitadores/editar', capacitador!.id]">
+          <i class="material-symbols-outlined">edit</i>
+          Editar
+        </button>
+        <button class="info__capacitador__section__buttons__button" (click)="onDeleteCapacitador( capacitador!.id)">
+          <i class="material-symbols-outlined">delete</i>
+          Eliminar
+        </button>
+      </div>
+
+    </section>
+  </div>
+
+</section>

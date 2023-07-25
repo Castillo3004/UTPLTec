@@ -14,6 +14,8 @@ import { ListaCapacitadoresComponent } from './pages/capacitadores/lista-capacit
 import { AgregarEventoComponent } from './pages/eventos/agregar-evento/nuevo-evento.component';
 import { ListaEventosComponent } from './pages/eventos/lista-eventos/lista-eventos.component';
 import { VerEventoComponent } from './pages/eventos/ver-evento/ver-evento.component';
+import { VerCapacitadorComponent } from './pages/capacitadores/ver-capacitador/ver-capacitador.component';
+import { AgregarAreaComponent } from './pages/areas/agregar-area/agregar-area.component';
 
 
 
@@ -24,11 +26,16 @@ import { VerEventoComponent } from './pages/eventos/ver-evento/ver-evento.compon
     HeaderAdminComponent,
 
     AdminPageComponent,
+
     AgregarCapacitadoresComponent,
     ListaCapacitadoresComponent,
+    VerCapacitadorComponent,
+
     AgregarEventoComponent,
     ListaEventosComponent,
-    VerEventoComponent
+    VerEventoComponent,
+
+    AgregarAreaComponent
   ],
   imports: [
     CommonModule,
