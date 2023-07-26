@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
-import { Capacitadores } from 'src/app/admin/interfaces/capacitadores.interface';
+import { Capacitador } from 'src/app/admin/interfaces/capacitador.interface';
 import { CapacitadoresService } from 'src/app/admin/services/capacitadores.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { CapacitadoresService } from 'src/app/admin/services/capacitadores.servi
 })
 export class VerCapacitadorComponent  implements OnInit{
 
-  public capacitador?: Capacitadores;
+  public capacitador?: Capacitador;
 
   private activatedRoute = inject(ActivatedRoute);
   private capacitadoresService = inject(CapacitadoresService);

@@ -1,10 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { EventosService } from '../../../services/eventos.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, switchMap } from 'rxjs';
-import { Eventos } from 'src/app/admin/interfaces/eventos.interface';
-import { CapacitadoresService } from '../../../services/capacitadores.service';
-import { Capacitadores } from 'src/app/admin/interfaces/capacitadores.interface';
+import { switchMap } from 'rxjs';
+import { Evento } from 'src/app/admin/interfaces/evento.interface';
+
+import { EventosService } from 'src/app/admin/services/eventos.service';
 
 @Component({
   selector: 'app-ver-evento',
@@ -13,40 +12,37 @@ import { Capacitadores } from 'src/app/admin/interfaces/capacitadores.interface'
 })
 export class VerEventoComponent implements OnInit{
 
-  public evento?: Eventos;
+  public evento?: Evento;
 
-
-  private capacitadoresService = inject(CapacitadoresService);
-  private eventosService = inject(EventosService);
   private activatedRoute = inject(ActivatedRoute);
+  private eventosService = inject(EventosService);
   private router = inject( Router );
 
-
-  public capacitadoresByArea: Capacitadores[] = [];
-
-
-
-  private getAllCapacitadoresByArea( areaId: number ){
-    this.capacitadoresService.getCapacitadores()
-      .subscribe( capacitadores => {
-        this.capacitadoresByArea = capacitadores.filter(capacitador => capacitador.areas.some( area => area.id === areaId ));
-      })
-  }
 
   ngOnInit(): void {
 
     this.activatedRoute.params.pipe(
-      switchMap( ({ id }) => this.eventosService.getEventoById( id ))
-      ).subscribe( evento => {
+      switchMap( ({ id}) => this.eventosService.getEventoById( id ))
+    ).subscribe( evento => {
 
-        if( !evento ) return this.router.navigate(['admin/eventos/lista']);
+      if( !evento ) return this.router.navigate(['admin/eventos/lista']);
 
       this.evento = evento;
-      this.getAllCapacitadoresByArea(evento.areas[0].id)
       return;
+
     })
 
-    console.log(this.capacitadoresByArea);
+  }
+
+  onDeleteEvento( id: number ){
+
+    if( !id ) throw Error('Evento id is required');
+
+    this.eventosService.deleteEventoById( id )
+      .subscribe( () =>{
+        this.router.navigate(['/admin/eventos/lista']);
+      })
+
   }
 
 }

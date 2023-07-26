@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { AreasConocimiento } from 'src/app/admin/interfaces/areasConocimiento.interfaace';
-import { Capacitadores } from 'src/app/admin/interfaces/capacitadores.interface';
+import { AreaConocimiento } from 'src/app/admin/interfaces/areasConocimiento.interfaace';
+import { Capacitador } from 'src/app/admin/interfaces/capacitador.interface';
 
 import { AreasConocimientoService } from '../../../services/areas-conocimiento.service';
 import { CapacitadoresService } from 'src/app/admin/services/capacitadores.service';
@@ -18,7 +18,7 @@ import { switchMap } from 'rxjs';
 })
 export class AgregarCapacitadoresComponent  implements OnInit{
 
-  public areas: AreasConocimiento[] = [];
+  public areas: AreaConocimiento[] = [];
 
   private areasConocimientoService = inject( AreasConocimientoService );
   private router = inject(Router);
@@ -26,16 +26,18 @@ export class AgregarCapacitadoresComponent  implements OnInit{
   private capacitadoresService = inject( CapacitadoresService );
   private fb = inject( FormBuilder );
 
+  public idCapacitador: number = 0;
+
 
   public capacitadorForm: FormGroup = this.fb.group({
     nombreDocente: new FormControl<string>('', [ Validators.required, Validators.minLength(3)] ),
     apellidoDocente: new FormControl<string>('', [ Validators.required, Validators.minLength(3)] ),
-    identificacion: new FormControl<string>('', [ Validators.required, Validators.maxLength(10)] ),
+    identificacion: new FormControl<string>('', [ Validators.required, Validators.minLength(3), Validators.maxLength(10)] ),
     correo: new FormControl<string>('', [ Validators.required, Validators.email]),
     carrera: new FormControl<string>('', [ Validators.required, Validators.minLength(3)] ),
-    telefono: new FormControl<string>('', [ Validators.required, Validators.minLength(3)] ),
-    areaConocimiento: new FormControl<AreasConocimiento | null>(null),
-    descripcion: new FormControl<string>('',)
+    telefono: new FormControl<string>('', [ Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+    areaConocimiento: new FormControl<AreaConocimiento | null>(null, Validators.required),
+    descripcion: new FormControl<string>('')
   });
 
 
@@ -45,31 +47,30 @@ export class AgregarCapacitadoresComponent  implements OnInit{
   }
 
 
-  get currentCapacitador(): Capacitadores {
+  get currentCapacitador(): Capacitador {
     const selectedAreaId = this.capacitadorForm.value.areaConocimiento;
-    const capacitador: Capacitadores = {
+    const capacitador: Capacitador = {
       ...this.capacitadorForm.value,
+      imagen: 'hello-world.png',
       estado: 'Libre',
       areas: [{ id: selectedAreaId }],
-    };
+    } as Capacitador;
     return capacitador;
   }
 
-
+  // TODO: Falta validaciones
   ngOnInit(): void {
     this.getAreasConocmiento();
 
-    if( !this.router.url.includes('editar')) return;
+    if( !this.router.url.includes('admin/capacitadores/editar')) return;
 
     this.activatedRoute.params.pipe(
-      switchMap( ({ id }) => this.capacitadoresService.getCapacitadorById( id )),
+      switchMap( ({ id }) => this.capacitadoresService.getCapacitadorById( id ))
     ).subscribe( capacitador => {
-      console.log(capacitador);
 
       if( !capacitador ) {
         return this.router.navigateByUrl('/');
       }
-
 
       this.capacitadorForm.patchValue({
         nombreDocente: capacitador.nombreDocente,
@@ -81,17 +82,24 @@ export class AgregarCapacitadoresComponent  implements OnInit{
         areaConocimiento: capacitador.areas?.length ? capacitador.areas[0].id : null,
         descripcion: capacitador.descripcion,
       });
+
       return;
     })
 
   }
 
-
+  // TODO: Agregar SNAckBAr
   onSubmit(): void {
-    if (this.capacitadorForm.invalid) return;
 
-    if (this.currentCapacitador.id) {
-      this.capacitadoresService.updateCapacitador( this.currentCapacitador )
+    if( this.capacitadorForm.invalid ){
+      this.capacitadorForm.markAllAsTouched();
+      return;
+    }
+
+    this.idCapacitador = this.activatedRoute.snapshot.params['id'];
+
+    if ( this.idCapacitador ) {
+      this.capacitadoresService.updateCapacitador( this.currentCapacitador, this.idCapacitador )
         .subscribe(() => {
           console.log('Capacitador Actualizado');
         });
@@ -105,16 +113,31 @@ export class AgregarCapacitadoresComponent  implements OnInit{
       });
   }
 
+  // Captura Errores
 
+  isValidField( field:string ): boolean | null{
+    return this.capacitadorForm.controls[field].errors && this.capacitadorForm.controls[field].touched
+  }
 
+  getFieldError(field: string): string | null{
+    if( !this.capacitadorForm.controls[field] ) return null
+    const errors = this.capacitadorForm.controls[field].errors || {};
 
+    for (const key of Object.keys(errors)) {
+      switch( key ){
+        case 'required':
+          return 'Este campo es requerido'
+        case 'minlength':
+          return `Minimo ${ errors['minlength'].requiredLength } caracters.`;
+        case 'min':
+          return `Debe ser mayor a 0`
+        case 'email':
+          return `Debe ser tipo email`
+      }
+    }
 
-
-
-
-
-
-
+    return null;
+  }
 
 
 }

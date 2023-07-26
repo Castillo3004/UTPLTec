@@ -14,6 +14,7 @@
           <th>Evento</th>
           <th>Fecha</th>
           <th>Hora</th>
+          <th>Tiempo</th>
           <th>Estado</th>
           <th>Asignar</th>
           <th>Acciones</th>
@@ -23,17 +24,18 @@
 
         <tr *ngFor="let evento of eventos">
           <td>
-            <button class="eventos__table__ver__button"><i class="material-symbols-outlined">visibility</i></button>
+            <button class="eventos__table__ver__button" [routerLink]="['/admin/eventos/evento', evento.id]"><i class="material-symbols-outlined">visibility</i></button>
           </td>
           <td>{{ evento.id }}</td>
           <td>{{ evento.titulo }}</td>
           <td>{{ evento.fecha }}</td>
-          <td>{{ evento.duracion }}</td>
+          <td>{{ evento.inicioHora }}</td>
+          <td>{{ evento.duracion }} {{ evento.duracion === 1 ? 'hora' : 'horas'  }}</td>
           <td> <h6 class="eventos__table__estado">{{ evento.estado }}</h6></td>
-          <td><button class="eventos__table__asignar__button" [routerLink]="['/admin/eventos/evento', evento.id]">Asignar Profesor</button></td>
+          <td><button class="eventos__table__asignar__button" [routerLink]="['/admin/eventos/asignarProfesor', evento.id]">Asignar Profesor</button></td>
           <td>
             <div class="capacitadores__table__actions__buttons">
-              <button class="capacitadores__table__edit__button"><i class="material-symbols-outlined">edit</i></button>
+              <button class="capacitadores__table__edit__button" [routerLink]="['/admin/eventos/editar', evento.id]"><i class="material-symbols-outlined">edit</i></button>
               <button class="capacitadores__table__delete__button" (click)="onDeleteEvento( evento.id )"><i class="material-symbols-outlined">delete</i></button>
             </div>
           </td>

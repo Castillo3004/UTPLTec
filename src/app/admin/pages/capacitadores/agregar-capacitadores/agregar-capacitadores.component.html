@@ -2,8 +2,8 @@
 
   <div class="title__containter">
     <h3 class="title__containter__h3">
-      {{ currentCapacitador ? 'Editar Capcitador': 'Agregar Capacitador'}}
-      <small *ngIf="currentCapacitador.id">{{ currentCapacitador.nombreDocente}}</small>
+      {{ currentCapacitador.nombreDocente ? 'Editar Capacitador': 'Agregar Capacitador'}}
+      <small *ngIf="currentCapacitador.nombreDocente"> - {{ currentCapacitador.nombreDocente}} {{ currentCapacitador.apellidoDocente}}</small>
     </h3>
     <figure class="title__containter__figure">
       <img class="title__containter__figure__img" src="../../../../../assets/logo.png" alt="Logo ActualizaTEC">
@@ -27,6 +27,9 @@
           required
           formControlName="nombreDocente"
         >
+        <span *ngIf="isValidField('nombreDocente')" class="form-text text-danger">
+          {{ getFieldError('nombreDocente') }}
+      </span>
       </div>
 
       <div class="form__capacit__inputs__input">
@@ -37,6 +40,9 @@
           required
           formControlName="apellidoDocente"
         >
+        <span *ngIf="isValidField('apellidoDocente')" class="form-text text-danger">
+          {{ getFieldError('apellidoDocente') }}
+        </span>
       </div>
 
       <div class="form__capacit__inputs__input">
@@ -47,6 +53,9 @@
           required
           formControlName="correo"
         >
+        <span *ngIf="isValidField('correo')" class="form-text text-danger">
+          {{ getFieldError('correo') }}
+        </span>
       </div>
 
       <div class="form__capacit__inputs__input">
@@ -57,6 +66,9 @@
           required
           formControlName="identificacion"
         >
+        <span *ngIf="isValidField('identificacion')" class="form-text text-danger">
+          {{ getFieldError('identificacion') }}
+        </span>
       </div>
 
       <div class="form__capacit__inputs__input">
@@ -67,6 +79,9 @@
           required
           formControlName="carrera"
         >
+        <span *ngIf="isValidField('carrera')" class="form-text text-danger">
+          {{ getFieldError('carrera') }}
+      </span>
       </div>
 
       <div class="form__capacit__inputs__input">
@@ -77,6 +92,9 @@
           required
           formControlName="telefono"
         >
+        <span *ngIf="isValidField('telefono')" class="form-text text-danger">
+          {{ getFieldError('telefono') }}
+        </span>
       </div>
 
       <div class="form__capacit__inputs__input">
@@ -92,6 +110,9 @@
             [value]="area.id"
           >{{ area.nombreArea }}</option>
         </select>
+        <span *ngIf="isValidField('areaConocimiento')" class="form-text text-danger">
+          {{ getFieldError('areaConocimiento') }}
+        </span>
       </div>
 
       <div class="form__capacit__inputs__input">

@@ -1,74 +1,73 @@
-<div class="container">
+<section class="container">
 
-  <section class="evento__container">
-
-    <h2 class="container evento__container__title">{{ evento?.titulo}}</h2>
-
-    <div class="evento__container__title__des">
-      <h6>Descripción</h6>
-      <p>{{ evento?.descripcion }}</p>
-    </div>
-
-    <div class="evento__container__title__info">
-      <div>
-        <h6>Modalidad</h6>
-        <p>Presencial</p>
-      </div>
-      <div>
-        <h6>Fecha</h6>
-        <p>{{ evento?.fecha }}</p>
-      </div>
-    </div>
-
-    <div class="evento__container__title__info">
-      <div>
-        <h6>Area de conocimiento</h6>
-        <p>{{ evento!.areas[0].nombreArea }}</p>
-      </div>
-
-      <figure>
-        <img src="https://media.licdn.com/dms/image/C4E22AQFVEoFdff-HMQ/feedshare-shrink_800/0/1678897005241?e=1692835200&v=beta&t=w_vdsne0TUTuxY4_E0yWJ8zuONlz6MFp51qZ-x9hKt8" [alt]=" evento!.titulo">
-      </figure>
-    </div>
-
-  </section>
-
-
-  <ng-template #divSinCapacitador>
-    <h3>No hay profesores de acuerdo a la area de conocimiento del evento</h3>
-  </ng-template>
-
-  <div class="evento__table" *ngIf="capacitadoresByArea; else divSinCapacitador">
-    <h4 class="evento__table__title">Profesores Disponibles</h4>
-
-    <div class="table-responsive">
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>Ver</th>
-            <th>Nombre</th>
-            <th>Area de Conocimiento</th>
-            <th>Correo Electronico</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <tr *ngFor="let capacitador of capacitadoresByArea">
-            <td>
-              <button class="eventos__table__ver__button" [routerLink]="['/admin/capacitadores/capacitador', capacitador.id]"><i class="material-symbols-outlined">visibility</i></button>
-            </td>
-            <td>{{ capacitador.nombreDocente }} {{ capacitador.apellidoDocente}}</td>
-            <td>{{ capacitador.areas[0].nombreArea }}</td>
-            <td>{{ capacitador.correo }}</td>
-            <td>
-              <div class="capacitadores__table__actions__buttons">
-                <button class="capacitadores__table__email__button"><i class="material-symbols-outlined">email</i></button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="title__containter">
+    <h2 class="title__containter__h2">
+      {{ evento?.titulo }}
+    </h2>
+    <figure class="title__containter__figure">
+      <img class="title__containter__figure__img" src="../../../../../assets/logo.png" alt="Logo ActualizaTEC">
+    </figure>
   </div>
-</div>
+
+  <div class="info__capacitador">
+    <figure class="info__capacitador__figure">
+      <img class="info__capacitador__figure__img" src="https://media.licdn.com/dms/image/C4E22AQFVEoFdff-HMQ/feedshare-shrink_800/0/1678897005241?e=1692835200&v=beta&t=w_vdsne0TUTuxY4_E0yWJ8zuONlz6MFp51qZ-x9hKt8" [alt]="evento?.titulo">
+    </figure>
+
+    <section class="info__capacitador__section">
+
+      <div class="info__capacitador__section__container">
+        <div class="info__capacitador__section__container__data">
+          <h4>Fecha</h4>
+          <p>{{ evento?.fecha }}</p>
+        </div>
+        <div class="info__capacitador__section__container__data">
+          <h4>Hora</h4>
+          <p>{{ evento?.inicioHora}} </p>
+        </div>
+      </div>
+
+      <div class="info__capacitador__section__container">
+        <div class="info__capacitador__section__container__data">
+          <h4>Duración</h4>
+          <p>{{evento?.duracion}} {{ evento?.duracion === 1 ? 'hora' : 'eventos'}}</p>
+        </div>
+        <div class="info__capacitador__section__container__data">
+          <h4>Modalidad</h4>
+          <p>{{ evento?.modalidad }}</p>
+        </div>
+      </div>
+
+      <div class="info__capacitador__section__container">
+        <div class="info__capacitador__section__container__data">
+          <h4>Estado</h4>
+          <p>{{ evento?.estado }}</p>
+        </div>
+        <div class="info__capacitador__section__container__data">
+          <h4>Área Conocimiento</h4>
+          <p>{{ evento?.areas?.[0]?.nombreArea }}</p>
+        </div>
+      </div>
+
+      <div class="info__capacitador__section__container">
+        <div class="info__capacitador__section__container__data">
+          <h4>Descripción</h4>
+          <p>{{ evento?.descripcion}}</p>
+        </div>
+      </div>
+
+      <div class="info__capacitador__section__buttons">
+        <button class="info__capacitador__section__buttons__button" [routerLink]="['/admin/eventos/editar', evento?.id]">
+          <i class="material-symbols-outlined">edit</i>
+          Editar
+        </button>
+        <button class="info__capacitador__section__buttons__button" (click)="onDeleteEvento( evento!.id)">
+          <i class="material-symbols-outlined">delete</i>
+          Eliminar
+        </button>
+      </div>
+
+    </section>
+  </div>
+
+</section>

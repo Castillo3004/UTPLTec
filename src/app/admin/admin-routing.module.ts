@@ -9,6 +9,7 @@ import { AgregarEventoComponent } from './pages/eventos/agregar-evento/nuevo-eve
 import { ListaEventosComponent } from './pages/eventos/lista-eventos/lista-eventos.component';
 import { VerEventoComponent } from './pages/eventos/ver-evento/ver-evento.component';
 import { VerCapacitadorComponent } from './pages/capacitadores/ver-capacitador/ver-capacitador.component';
+import { AsignarProfesorEventoComponent } from './pages/eventos/asignar-profesor-evento/asignar-profesor-evento.component';
 
 const routes: Routes = [
   {
@@ -17,9 +18,11 @@ const routes: Routes = [
     children: [
       { path: 'inicio', component: InicioComponent},
       { path: 'eventos', children: [
-          { path: 'evento/:id', component: VerEventoComponent },
-          { path: 'lista', component: ListaEventosComponent },
-          { path: 'agregar', component: AgregarEventoComponent },
+        { path: 'evento/:id', component: VerEventoComponent },
+        { path: 'lista', component: ListaEventosComponent },
+        { path: 'agregar', component: AgregarEventoComponent },
+        { path: 'editar/:id', component: AgregarEventoComponent },
+        { path: 'asignarProfesor/:id', component: AsignarProfesorEventoComponent },
         ]
       },
       { path: 'capacitadores', children: [

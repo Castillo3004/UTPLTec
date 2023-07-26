@@ -29,7 +29,7 @@
           <td>{{ capacitador.apellidoDocente }}</td>
           <td>{{ capacitador.areas[0].nombreArea }}</td>
           <td>{{ capacitador.correo }}</td>
-          <td> <h6 class="capacitadores__table__estado">{{ capacitador.estado }}</h6></td>
+          <td> <h6 class="capacitadores__table__estado" [ngClass]="{'estado-libre': capacitador?.estado === 'Libre', 'estado-ocupado': capacitador?.estado === 'Ocupado'}">{{ capacitador.estado }}</h6></td>
           <td>
             <div class="capacitadores__table__actions__buttons">
               <button class="capacitadores__table__edit__button" [routerLink]="['/admin/capacitadores/editar', capacitador.id]"><i class="material-symbols-outlined">edit</i></button>

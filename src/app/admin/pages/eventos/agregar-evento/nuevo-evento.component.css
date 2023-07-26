@@ -64,6 +64,14 @@
 }
 
 
+.form-check{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+
 
 .form__capacit__inputs__input>label{
   display: flex;

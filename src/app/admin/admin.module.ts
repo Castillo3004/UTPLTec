@@ -18,6 +18,7 @@ import { VerCapacitadorComponent } from './pages/capacitadores/ver-capacitador/v
 import { AgregarEventoComponent } from './pages/eventos/agregar-evento/nuevo-evento.component';
 import { ListaEventosComponent } from './pages/eventos/lista-eventos/lista-eventos.component';
 import { VerEventoComponent } from './pages/eventos/ver-evento/ver-evento.component';
+import { AsignarProfesorEventoComponent } from './pages/eventos/asignar-profesor-evento/asignar-profesor-evento.component';
 
 
 
@@ -36,6 +37,7 @@ import { VerEventoComponent } from './pages/eventos/ver-evento/ver-evento.compon
     AgregarEventoComponent,
     ListaEventosComponent,
     VerEventoComponent,
+    AsignarProfesorEventoComponent,
 
   ],
   imports: [

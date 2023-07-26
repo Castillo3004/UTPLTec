@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Capacitadores } from 'src/app/admin/interfaces/capacitadores.interface';
+import { Capacitador } from 'src/app/admin/interfaces/capacitador.interface';
 import { CapacitadoresService } from 'src/app/admin/services/capacitadores.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CapacitadoresService } from 'src/app/admin/services/capacitadores.servi
 })
 export class ListaCapacitadoresComponent implements OnInit{
 
-  public capacitadores: Capacitadores[] = [];
+  public capacitadores: Capacitador[] = [];
 
   private capacitadoresService = inject(CapacitadoresService)
 

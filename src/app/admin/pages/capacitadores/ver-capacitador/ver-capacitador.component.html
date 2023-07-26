@@ -46,7 +46,7 @@
         </div>
         <div class="info__capacitador__section__container__data">
           <h4>Área Conocimiento</h4>
-          <p>{{ capacitador!.areas[0].nombreArea }}</p>
+          <p>{{ capacitador?.areas?.[0]?.nombreArea }}</p>
         </div>
       </div>
 
@@ -58,7 +58,7 @@
       </div>
 
       <div class="info__capacitador__section__buttons">
-        <button class="info__capacitador__section__buttons__button" [routerLink]="['/admin/capacitadores/editar', capacitador!.id]">
+        <button class="info__capacitador__section__buttons__button" [routerLink]="['/admin/capacitadores/editar', capacitador?.id]">
           <i class="material-symbols-outlined">edit</i>
           Editar
         </button>

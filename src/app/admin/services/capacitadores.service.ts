@@ -3,7 +3,8 @@ import { HttpClient} from '@angular/common/http';
 
 import { environments } from 'environments/environments';
 import { Observable, catchError, map, of } from 'rxjs';
-import { Capacitadores } from '../interfaces/capacitadores.interface';
+import { Capacitador } from '../interfaces/capacitador.interface';
+
 
 
 @Injectable({
@@ -16,23 +17,23 @@ export class CapacitadoresService {
 
 
 
-  getCapacitadores():Observable<Capacitadores[]>{
-    return this.http.get<Capacitadores[]>(`${this.baseUrl}/api/docentes`);
+  getCapacitadores():Observable<Capacitador[]>{
+    return this.http.get<Capacitador[]>(`${this.baseUrl}/api/docentes`);
   }
 
-  getCapacitadorById(id: number):Observable<Capacitadores>{
-    return this.http.get<Capacitadores>(`${ this.baseUrl }/api/docentes/${ id }/with-areas`)
+  getCapacitadorById(id: number):Observable<Capacitador>{
+    return this.http.get<Capacitador>(`${ this.baseUrl }/api/docentes/${ id }/with-areas`)
   }
 
-  addCapacitador( capacitador: Capacitadores): Observable<Capacitadores>{
-    return this.http.post<Capacitadores>(`${this.baseUrl}/api/docentes`, capacitador)
+  addCapacitador( capacitador: Capacitador): Observable<Capacitador>{
+    return this.http.post<Capacitador>(`${this.baseUrl}/api/docentes`, capacitador)
   }
 
 
-  updateCapacitador( capacitador: Capacitadores): Observable<Capacitadores>{
-    if( !capacitador.id ) throw Error('Capacitador id is required');
+  updateCapacitador( capacitador: Capacitador, id: number): Observable<Capacitador>{
+    if( !id ) throw Error('Capacitador id is required');
 
-    return this.http.put<Capacitadores>(`${this.baseUrl}/api/docentes/${ capacitador.id }`, capacitador);
+    return this.http.patch<Capacitador>(`${this.baseUrl}/api/docentes/${ id }`, capacitador);
   }
 
 

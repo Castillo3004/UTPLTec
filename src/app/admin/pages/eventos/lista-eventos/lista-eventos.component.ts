@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Eventos } from 'src/app/admin/interfaces/eventos.interface';
+import { Evento } from 'src/app/admin/interfaces/evento.interface';
 import { EventosService } from 'src/app/admin/services/eventos.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { EventosService } from 'src/app/admin/services/eventos.service';
 })
 export class ListaEventosComponent implements OnInit{
 
-  public eventos: Eventos[] = [];
+  public eventos: Evento[] = [];
 
   private eventosService = inject( EventosService );
 
