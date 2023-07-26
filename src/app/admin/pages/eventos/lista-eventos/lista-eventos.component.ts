@@ -1,4 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from 'src/app/admin/components/confirm-dialog/confirm-dialog.component';
 import { Evento } from 'src/app/admin/interfaces/evento.interface';
 import { EventosService } from 'src/app/admin/services/eventos.service';
 
@@ -12,6 +14,7 @@ export class ListaEventosComponent implements OnInit{
   public eventos: Evento[] = [];
 
   private eventosService = inject( EventosService );
+  private dialog = inject( MatDialog );
 
 
   private getAllEventos(){
@@ -27,9 +30,16 @@ export class ListaEventosComponent implements OnInit{
   onDeleteEvento( id: number ){
     if( !id ) throw Error('Capacitador id is required');
 
-    this.eventosService.deleteEventoById( id ).subscribe( () =>{
-      this.getAllEventos()
-    })
+    const dialogRef = this.dialog.open(ConfirmDialogComponent);
+
+    dialogRef.afterClosed().subscribe( ( result ) => {
+      if( result === true){
+        this.eventosService.deleteEventoById( id ).subscribe( () =>{
+          this.getAllEventos()
+
+        });
+      }
+    });
   }
 
 

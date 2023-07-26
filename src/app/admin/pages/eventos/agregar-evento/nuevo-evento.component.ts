@@ -98,15 +98,15 @@ export class AgregarEventoComponent implements OnInit{
     if ( this.idEvento ) {
       this.eventosService.updateEvento( this.currentEvento, this.idEvento )
         .subscribe(() => {
-          console.log('Evento Actualizado');
+          this.router.navigate(['admin/eventos/lista']);
         });
       return;
     }
 
     this.eventosService.addEvento( this.currentEvento )
       .subscribe(() => {
-        console.log('Evento Creado');
         this.eventoForm.reset()
+        this.router.navigate(['admin/eventos/lista']);
       });
   }
 

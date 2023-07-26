@@ -1,6 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { AreaConocimiento } from 'src/app/admin/interfaces/areasConocimiento.interfaace';
 import { Capacitador } from 'src/app/admin/interfaces/capacitador.interface';
 
@@ -25,6 +27,7 @@ export class AgregarCapacitadoresComponent  implements OnInit{
   private activatedRoute = inject(ActivatedRoute);
   private capacitadoresService = inject( CapacitadoresService );
   private fb = inject( FormBuilder );
+  private snackbar = inject( MatSnackBar );
 
   public idCapacitador: number = 0;
 
@@ -88,7 +91,7 @@ export class AgregarCapacitadoresComponent  implements OnInit{
 
   }
 
-  // TODO: Agregar SNAckBAr
+
   onSubmit(): void {
 
     if( this.capacitadorForm.invalid ){
@@ -101,15 +104,15 @@ export class AgregarCapacitadoresComponent  implements OnInit{
     if ( this.idCapacitador ) {
       this.capacitadoresService.updateCapacitador( this.currentCapacitador, this.idCapacitador )
         .subscribe(() => {
-          console.log('Capacitador Actualizado');
+          this.router.navigate(['admin/capacitadores/lista']);
         });
       return;
     }
 
     this.capacitadoresService.addCapacitador( this.currentCapacitador )
       .subscribe(() => {
-        console.log('Capacitador Creado');
-        this.capacitadorForm.reset()
+        this.capacitadorForm.reset(),
+        this.router.navigate(['admin/capacitadores/lista']);
       });
   }
 
@@ -138,6 +141,7 @@ export class AgregarCapacitadoresComponent  implements OnInit{
 
     return null;
   }
+
 
 
 }

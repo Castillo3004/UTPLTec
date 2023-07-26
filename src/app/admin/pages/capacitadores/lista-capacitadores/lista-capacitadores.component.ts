@@ -1,6 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Capacitador } from 'src/app/admin/interfaces/capacitador.interface';
 import { CapacitadoresService } from 'src/app/admin/services/capacitadores.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from 'src/app/admin/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'admin-lista-capacitadores',
@@ -12,6 +14,7 @@ export class ListaCapacitadoresComponent implements OnInit{
   public capacitadores: Capacitador[] = [];
 
   private capacitadoresService = inject(CapacitadoresService)
+  private dialog = inject( MatDialog );
 
 
   private getAllCapacitadores() {
@@ -26,12 +29,18 @@ export class ListaCapacitadoresComponent implements OnInit{
 
 
 
-  onDeleteCapacitador( id: number){
-    if( !id ) throw Error('Capacitador id is required');
+  onDeleteCapacitador(id: number) {
+    if (!id) throw Error('Capacitador id is required');
 
-    this.capacitadoresService.deleteCapacitadorById( id ).subscribe( () =>{
-      this.getAllCapacitadores()
-    })
+    const dialogRef = this.dialog.open(ConfirmDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === true) {
+        this.capacitadoresService.deleteCapacitadorById(id).subscribe(() => {
+          this.getAllCapacitadores();
+        });
+      }
+    });
   }
 
 

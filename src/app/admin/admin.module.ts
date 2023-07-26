@@ -19,6 +19,8 @@ import { AgregarEventoComponent } from './pages/eventos/agregar-evento/nuevo-eve
 import { ListaEventosComponent } from './pages/eventos/lista-eventos/lista-eventos.component';
 import { VerEventoComponent } from './pages/eventos/ver-evento/ver-evento.component';
 import { AsignarProfesorEventoComponent } from './pages/eventos/asignar-profesor-evento/asignar-profesor-evento.component';
+import { MaterialModule } from '../material/material.module';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 
@@ -38,6 +40,8 @@ import { AsignarProfesorEventoComponent } from './pages/eventos/asignar-profesor
     ListaEventosComponent,
     VerEventoComponent,
     AsignarProfesorEventoComponent,
+    ConfirmDialogComponent,
+
 
   ],
   imports: [
@@ -46,7 +50,8 @@ import { AsignarProfesorEventoComponent } from './pages/eventos/asignar-profesor
     AdminRoutingModule,
     InicioModule,
 
-
+    // Aqui esta todo lo de Angular Material
+    MaterialModule,
     ReactiveFormsModule
 
   ]
