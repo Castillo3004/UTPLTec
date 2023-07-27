@@ -88,9 +88,18 @@
 .eventos__table__estado{
   display: flex;
   justify-content: center;
-  background-color: #32f16e;
   color: #fff;
   font-weight: 500;
   border-radius: 1rem;
   padding: 0.45rem 0;
 }
+
+
+.estado-confirmado{
+  background-color: #32f16e;
+}
+
+.estado-rechazado{
+  background-color: #f13232;
+}
+

@@ -55,8 +55,13 @@
   width: 30%;
 }
 
-.info__capacitador__section__container__data:last-child(1){
+.info__capacitador__section__container__modify{
   width: 70%;
+}
+
+.info__capacitador__section__container__modify h4{
+  color: var(--color-primary);
+  text-align: justify;
 }
 
 .info__capacitador__section__container__data h4{

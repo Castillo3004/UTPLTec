@@ -1,0 +1,116 @@
+.confirmation-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInOverlay 0.1s;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+.confirmation-dialog {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInDialog 0.1s;
+}
+
+
+.area__title{
+color: var(--color-primary);
+}
+
+.form__area{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2rem auto;
+}
+
+
+
+.form__area__inputs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+
+.form__area__inputs__input{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.form__area__inputs__input>input{
+  display: block;
+  width: 100%;
+  height: 2rem;
+  margin: 0 auto;
+  border: none;
+  margin-top: 10px;
+  border-bottom: 2px solid #b6b6b6;
+  transition: ease-in-out 0.4s;
+  outline: none;
+}
+
+.form__area__inputs__input>input:focus{
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.form__area__inputs__input>label{
+  display: flex;
+  align-items: center;
+  color: var(--color-secondary);
+}
+
+
+.form__area__button{
+  align-self: flex-end;
+  margin-left: 2rem;
+}
+
+.form__area__button button{
+  padding: 13px 40px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background: var(--color-secondary);
+  font-size: 1rem;
+  transition: ease-in 0.4s;
+  cursor: pointer;
+}
+
+.form__area__button button:hover{
+  opacity: 0.9;
+}
+
+.table-responsive{
+  height: 20rem;
+  overflow-y: scroll;
+}
+
+.areas__table__delete__button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 5px;
+  border-radius: 0.5rem;
+  transition: ease-in-out 0.3s;
+}
+
+.areas__table__delete__button:hover{
+  opacity: 0.8;
+}
+

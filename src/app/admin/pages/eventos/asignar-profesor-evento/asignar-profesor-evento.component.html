@@ -23,11 +23,11 @@
     <div class="evento__container__title__info">
       <div>
         <h6>Area de conocimiento</h6>
-        <p>{{ evento!.areas[0].nombreArea }}</p>
+        <p>{{ evento?.areas?.[0]?.nombreArea }}</p>
       </div>
 
       <figure>
-        <img src="https://media.licdn.com/dms/image/C4E22AQFVEoFdff-HMQ/feedshare-shrink_800/0/1678897005241?e=1692835200&v=beta&t=w_vdsne0TUTuxY4_E0yWJ8zuONlz6MFp51qZ-x9hKt8" [alt]=" evento!.titulo">
+        <img src="https://media.licdn.com/dms/image/C4E22AQFVEoFdff-HMQ/feedshare-shrink_800/0/1678897005241?e=1692835200&v=beta&t=w_vdsne0TUTuxY4_E0yWJ8zuONlz6MFp51qZ-x9hKt8" [alt]=" evento?.titulo">
       </figure>
     </div>
 
@@ -63,7 +63,11 @@
             <td>{{ capacitador.correo }}</td>
             <td>
               <div class="capacitadores__table__actions__buttons">
-                <button class="capacitadores__table__email__button"><i class="material-symbols-outlined">email</i></button>
+                <div *ngIf="correoEnviadoExitosamente" class="alert alert-success" role="alert">
+                  ¡El correo se ha enviado exitosamente al docente!
+                </div>
+                <button *ngIf="!correoEnviadoExitosamente"  class="capacitadores__table__email__button" (click)="enviarCorreo(capacitador.id, capacitador.correo)"><i class="material-symbols-outlined">email</i></button>
+
               </div>
             </td>
           </tr>

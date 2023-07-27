@@ -21,6 +21,7 @@ import { VerEventoComponent } from './pages/eventos/ver-evento/ver-evento.compon
 import { AsignarProfesorEventoComponent } from './pages/eventos/asignar-profesor-evento/asignar-profesor-evento.component';
 import { MaterialModule } from '../material/material.module';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 
 
@@ -41,6 +42,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     VerEventoComponent,
     AsignarProfesorEventoComponent,
     ConfirmDialogComponent,
+    PopupComponent,
 
 
   ],

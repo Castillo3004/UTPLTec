@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PopupComponent } from '../popup/popup.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -8,5 +10,13 @@ import { Component } from '@angular/core';
 })
 export class HeaderAdminComponent {
 
+  private dialog = inject(MatDialog)
+
+
+  openDialog(): void {
+    this.dialog.open(PopupComponent, {
+      width: '45%',
+  });
+}
 
 }

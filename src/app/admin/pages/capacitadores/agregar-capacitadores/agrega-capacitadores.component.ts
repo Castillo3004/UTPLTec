@@ -61,7 +61,7 @@ export class AgregarCapacitadoresComponent  implements OnInit{
     return capacitador;
   }
 
-  // TODO: Falta validaciones
+
   ngOnInit(): void {
     this.getAreasConocmiento();
 

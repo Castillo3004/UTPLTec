@@ -12,7 +12,8 @@
 
   <div class="info__capacitador">
     <figure class="info__capacitador__figure">
-      <img class="info__capacitador__figure__img" src="https://marketplace.canva.com/EAFmXbWjG3g/1/0/1600w/canva-avatar-foto-de-perfil-hombre-dibujo-ilustrado-moderno-morado-YQVjZm4iPII.jpg" [alt]="capacitador?.nombreDocente">
+      <!-- TODO: COrregir imagen -->
+      <img class="info__capacitador__figure__img" [src]="capacitador?.imagen" [alt]="capacitador?.nombreDocente">
     </figure>
 
     <section class="info__capacitador__section">
@@ -51,7 +52,7 @@
       </div>
 
       <div class="info__capacitador__section__container">
-        <div class="info__capacitador__section__container__data">
+        <div class="info__capacitador__section__container__modify">
           <h4>Descripción</h4>
           <p>{{ capacitador?.descripcion}}</p>
         </div>

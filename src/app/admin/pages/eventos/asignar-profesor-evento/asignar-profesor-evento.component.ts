@@ -23,6 +23,7 @@ export class AsignarProfesorEventoComponent implements OnInit{
 
 
   public capacitadoresByArea: Capacitador[] = [];
+  public correoEnviadoExitosamente = false;
 
 
 
@@ -46,7 +47,30 @@ export class AsignarProfesorEventoComponent implements OnInit{
       return;
     })
 
-    console.log(this.capacitadoresByArea);
+  }
+
+
+  enviarCorreo(docenteId: number, correoDocente: string) {
+    const eventoId = +this.activatedRoute.snapshot.params['id'];
+
+    const confirmarEnvio = window.confirm('¿Estás seguro de que quieres enviar el correo al docente?');
+
+    if (confirmarEnvio && eventoId) {
+      this.capacitadoresService.enviarCorreo(docenteId, correoDocente, eventoId)
+        .subscribe(
+          response => {
+            console.log('Correo enviado correctamente al docente');
+            this.correoEnviadoExitosamente = true; // Mostrar mensaje de éxito
+          },
+          error => {
+            console.error('Error al enviar el correo al docente', error);
+            console.log(correoDocente);
+            // Aquí puedes mostrar algún mensaje de error o manejar el error de acuerdo a tus necesidades
+          }
+        );
+    } else {
+      console.log('Envío de correo cancelado por el usuario');
+    }
   }
 
 }

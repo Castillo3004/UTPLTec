@@ -41,4 +41,18 @@ export class EventosService {
   }
 
 
+  // Confirmar y rechazar eventos
+
+  confirmarEvento(eventoId: string): Observable<Evento> {
+    const url = `${this.baseUrl}/api/${eventoId}/confirmar`;
+    return this.http.put<Evento>(url, {});
+  }
+
+  // Método para rechazar el evento
+  rechazarEvento(eventoId: string): Observable<Evento> {
+    const url = `${this.baseUrl}/api/${eventoId}/rechazar`;
+    return this.http.put<Evento>(url, {});
+  }
+
+
 }

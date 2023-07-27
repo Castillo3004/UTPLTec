@@ -36,7 +36,6 @@ export class ListaEventosComponent implements OnInit{
       if( result === true){
         this.eventosService.deleteEventoById( id ).subscribe( () =>{
           this.getAllEventos()
-
         });
       }
     });

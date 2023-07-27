@@ -10,6 +10,9 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
+  { path: 'confirmacion',
+    loadChildren: () => import('./public/info-evento/info-evento.module').then(m => m.InfoEVentoModule)
+  },
   {
     path: '**',
     redirectTo: 'auth'

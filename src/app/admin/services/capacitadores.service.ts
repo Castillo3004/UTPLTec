@@ -43,4 +43,19 @@ export class CapacitadoresService {
       catchError( err => of(false))
     )
   }
+
+
+  // Envio de Correo
+  enviarCorreo(
+    docenteId: number,
+    correoDocente: string,
+    eventoId: number
+  ): Observable<any> {
+    // Realiza el proceso de envío del correo utilizando HttpClient y el endpoint de tu backend
+    const data = { id: docenteId, correo: correoDocente, idEvento: eventoId };
+    console.log(docenteId);
+
+    return this.http.post<any>(`${this.baseUrl}/api/mail/enviar-correo`, data);
+  }
+
 }

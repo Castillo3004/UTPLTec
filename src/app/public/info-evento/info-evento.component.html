@@ -1,8 +1,9 @@
-<section class="container">
 
+<div class="confirm__evento">
+<div class="container" *ngIf="evento">
   <div class="title__containter">
     <h2 class="title__containter__h2">
-      {{ evento?.titulo }}
+      {{ evento.titulo }}
     </h2>
     <figure class="title__containter__figure">
       <img class="title__containter__figure__img" src="../../../../../assets/logo.png" alt="Logo ActualizaTEC">
@@ -11,7 +12,7 @@
 
   <div class="info__evento">
     <figure class="info__evento__figure">
-      <img class="info__evento__figure__img" src="https://media.licdn.com/dms/image/C4E22AQFVEoFdff-HMQ/feedshare-shrink_800/0/1678897005241?e=1692835200&v=beta&t=w_vdsne0TUTuxY4_E0yWJ8zuONlz6MFp51qZ-x9hKt8" [alt]="evento?.titulo">
+      <img class="info__evento__figure__img" src="https://media.licdn.com/dms/image/C4E22AQFVEoFdff-HMQ/feedshare-shrink_800/0/1678897005241?e=1692835200&v=beta&t=w_vdsne0TUTuxY4_E0yWJ8zuONlz6MFp51qZ-x9hKt8" [alt]="evento.titulo">
     </figure>
 
     <section class="info__evento__section">
@@ -19,55 +20,55 @@
       <div class="info__evento__section__container">
         <div class="info__evento__section__container__data">
           <h4>Fecha</h4>
-          <p>{{ evento?.fecha }}</p>
+          <p>{{ evento.fecha }}</p>
         </div>
         <div class="info__evento__section__container__data">
           <h4>Hora</h4>
-          <p>{{ evento?.inicioHora}} </p>
+          <p>{{ evento.inicioHora}} </p>
         </div>
       </div>
 
       <div class="info__evento__section__container">
         <div class="info__evento__section__container__data">
           <h4>Duración</h4>
-          <p>{{evento?.duracion}} {{ evento?.duracion === 1 ? 'hora' : 'horas'}}</p>
+          <p>{{evento.duracion}} {{ evento.duracion === 1 ? 'hora' : 'horas'}}</p>
         </div>
         <div class="info__evento__section__container__data">
           <h4>Modalidad</h4>
-          <p>{{ evento?.modalidad }}</p>
+          <p>{{ evento.modalidad }}</p>
         </div>
       </div>
 
       <div class="info__evento__section__container">
         <div class="info__evento__section__container__data">
           <h4>Estado</h4>
-          <p>{{ evento?.estado }}</p>
+          <p>{{ evento.estado }}</p>
         </div>
         <div class="info__evento__section__container__data">
           <h4>Área Conocimiento</h4>
-          <p>{{ evento?.areas?.[0]?.nombreArea }}</p>
+          <p>{{ evento.areas[0].nombreArea }}</p>
         </div>
       </div>
 
       <div class="info__evento__section__container">
         <div class="info__evento__section__container__modify">
           <h4>Descripción</h4>
-          <p>{{ evento?.descripcion}}</p>
+          <p>{{ evento.descripcion}}</p>
         </div>
       </div>
-
-      <div class="info__evento__section__buttons">
-        <button class="info__evento__section__buttons__button" [routerLink]="['/admin/eventos/editar', evento?.id]">
-          <i class="material-symbols-outlined">edit</i>
-          Editar
-        </button>
-        <button class="info__evento__section__buttons__button" (click)="onDeleteEvento( evento!.id)">
-          <i class="material-symbols-outlined">delete</i>
-          Eliminar
-        </button>
-      </div>
-
     </section>
   </div>
 
-</section>
+  <div class="info__evento__section__buttons">
+    <button class="info__evento__section__buttons__button" (click)="confirmarEvento()">
+      <i class="material-symbols-outlined">done</i>
+      Confirmar
+    </button>
+    <button class="info__evento__section__buttons__button" (click)="rechazarEvento()">
+      <i class="material-symbols-outlined">close  </i>
+      Rechazar
+    </button>
+  </div>
+
+</div>
+</div>

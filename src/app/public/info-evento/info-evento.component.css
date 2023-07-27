@@ -1,3 +1,9 @@
+.confirm__evento{
+  height: 100vh;
+  width: 100vw;
+}
+
+
 .title__containter{
   display: flex;
   flex-wrap: wrap;
@@ -75,6 +81,8 @@
 .info__evento__section__buttons{
   display: flex;
   align-self: flex-end;
+  justify-content: flex-end;
+  margin: 2rem auto;
   gap: 2rem;
 }
 
@@ -98,11 +106,10 @@
 }
 
 .info__evento__section__buttons__button:nth-child(2){
-  background: var(--color-primary);
+  background: var(--color-primary)
 }
 
 .info__evento__section__buttons__button:hover{
   opacity: 0.9;
 }
-
 

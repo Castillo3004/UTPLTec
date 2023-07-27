@@ -31,7 +31,7 @@
           <td>{{ evento.fecha }}</td>
           <td>{{ evento.inicioHora }}</td>
           <td>{{ evento.duracion }} {{ evento.duracion === 1 ? 'hora' : 'horas'  }}</td>
-          <td> <h6 class="eventos__table__estado">{{ evento.estado }}</h6></td>
+          <td> <h6 class="eventos__table__estado"  [ngClass]="{'estado-confirmado': evento.estado === 'Confirmado', 'estado-rechazado': evento.estado === 'Rechazado'}">{{ evento.estado }}</h6></td>
           <td><button class="eventos__table__asignar__button" [routerLink]="['/admin/eventos/asignarProfesor', evento.id]">Asignar Profesor</button></td>
           <td>
             <div class="capacitadores__table__actions__buttons">

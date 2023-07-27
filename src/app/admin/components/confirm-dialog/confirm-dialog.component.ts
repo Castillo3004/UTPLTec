@@ -19,13 +19,14 @@ import { MatDialogRef } from '@angular/material/dialog';
   align-items: center;
   animation: fadeInOverlay 0.1s;
   backdrop-filter: blur(5px);
+  overflow: hidden;
 }
 
 /* Estilos para la ventana de confirmación */
 .confirmation-dialog {
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   animation: fadeInDialog 0.1s;
 }

@@ -50,13 +50,13 @@ export class AgregarEventoComponent implements OnInit{
 
   get currentEvento(): Evento {
     const selectedAreaId = this.eventoForm.value.areaConocimiento;
-    const capacitador: Evento = {
+    const evento: Evento = {
       ...this.eventoForm.value,
       estado: 'Sin Asignación',
       imagen: 'hello-world.png',
       areas: [{ id: selectedAreaId }],
     };
-    return capacitador;
+    return evento;
   }
 
   ngOnInit(): void {
