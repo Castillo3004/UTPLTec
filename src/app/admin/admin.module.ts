@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import { AdminRoutingModule } from './admin-routing.module';
 import { InicioModule } from './pages/inicio/inicio.module';
 
@@ -45,6 +46,7 @@ import { PopupComponent } from './components/popup/popup.component';
     PopupComponent,
 
 
+
   ],
   imports: [
     CommonModule,
@@ -54,7 +56,7 @@ import { PopupComponent } from './components/popup/popup.component';
 
     // Aqui esta todo lo de Angular Material
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
   ]
 })

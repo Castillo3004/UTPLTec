@@ -20,10 +20,9 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.1.7",
     "@angular/router": "^16.1.7",
-    "@fullcalendar/core": "^4.4.2",
-    "@fullcalendar/daygrid": "^4.4.2",
-    "@fullcalendar/interaction": "^4.4.2",
-    "@fullcalendar/timegrid": "^4.4.2",
+    "@fullcalendar/angular": "^6.1.8",
+    "@fullcalendar/core": "^6.1.8",
+    "@fullcalendar/daygrid": "^6.1.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.6.1",
     "zone.js": "^0.13.1"

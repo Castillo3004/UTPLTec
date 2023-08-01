@@ -53,7 +53,6 @@ export class CapacitadoresService {
   ): Observable<any> {
     // Realiza el proceso de envío del correo utilizando HttpClient y el endpoint de tu backend
     const data = { id: docenteId, correo: correoDocente, idEvento: eventoId };
-    console.log(docenteId);
 
     return this.http.post<any>(`${this.baseUrl}/api/mail/enviar-correo`, data);
   }

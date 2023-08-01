@@ -6,12 +6,16 @@
   width: 100%;
 }
 
-.inicio__profesores{
-  width: 48%;
-}
-
 .inicio__proximosCursos{
   width: 48%;
 }
 
+.section__calendar{
+  width: 48%;
+}
+
+.calendar{
+  width: 80%;
+  margin: 0 auto;
+}
 
