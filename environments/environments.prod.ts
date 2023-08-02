@@ -2,5 +2,5 @@
 
 
 export const environments = {
-  baseURL: 'http://localhost:3000'
+  baseURL: 'https://actualiza-backend-production.up.railway.app'
 }
