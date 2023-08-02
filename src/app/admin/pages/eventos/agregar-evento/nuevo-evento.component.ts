@@ -52,7 +52,7 @@ export class AgregarEventoComponent implements OnInit{
     const selectedAreaId = this.eventoForm.value.areaConocimiento;
     const evento: Evento = {
       ...this.eventoForm.value,
-      estado: 'Sin Asignación',
+      estado: 'En Espera',
       imagen: 'hello-world.png',
       areas: [{ id: selectedAreaId }],
     };

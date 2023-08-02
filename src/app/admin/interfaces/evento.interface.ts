@@ -9,7 +9,7 @@ export interface Evento {
   duracion:    number;
   fecha:       string;
   imagen:      string;
-  estado:      'Confirmado' | 'Rechazado';
+  estado:      'Confirmado' | 'En Espera';
   inicioHora:  string;
   modalidad:   'Presencial' | 'Virtual';
   areas:       AreaConocimiento[];
